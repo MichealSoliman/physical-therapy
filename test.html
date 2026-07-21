@@ -1,0 +1,885 @@
+<!-- ============================================ -->
+<!-- SECTION: خدماتنا - تصميم تفاعلي فاخر (نسخة محسنة) -->
+<!-- ============================================ -->
+<section class="w-full bg-[#F8FAFC] py-16 md:py-20 lg:py-24 overflow-hidden" id="services">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- عنوان السكشن -->
+    <div class="text-center mb-12 md:mb-16">
+      <span class="inline-block text-[#1b7276] font-semibold text-sm md:text-base tracking-wider mb-2">خدماتنا</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] leading-tight">
+        خدمات العلاج الطبيعي المتخصصة
+      </h2>
+      <p class="text-gray-500 mt-3 max-w-2xl mx-auto text-base md:text-lg">
+        اختر الخدمة المناسبة وتعرف على تفاصيلها من خلال الكرت التفاعلي
+      </p>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+      
+      <!-- ===== القائمة الجانبية ===== -->
+      <div class="w-full lg:w-[320px] xl:w-[360px] flex-shrink-0" id="servicesList">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden sticky top-24">
+          <div class="p-5 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-white">
+            <h4 class="text-sm font-semibold text-[#1b7276] uppercase tracking-wider flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+              قائمة الخدمات
+            </h4>
+          </div>
+          <div class="p-3 space-y-1.5" id="servicesMenu">
+            <!-- سيتم إنشاؤها بواسطة JavaScript -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- ===== كرت عرض الخدمة ===== -->
+      <div class="flex-1 w-full" id="serviceDisplay">
+        <!-- سيتم إنشاؤه بواسطة JavaScript -->
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ===== CSS إضافي ===== */
+  
+  /* ===== عنصر القائمة ===== */
+  .service-list-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    color: #6B7280;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    border: 1px solid transparent;
+  }
+  
+  .service-list-item:hover {
+    background: #F3F6FC;
+    color: #1F2937;
+    transform: translateX(4px);
+    border-color: #E5E7EB;
+  }
+  
+  .service-list-item.active {
+    background: linear-gradient(135deg, #EEF4FF, #DBEAFE);
+    color: #2563EB;
+    font-weight: 600;
+    border-color: #BFDBFE;
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
+  }
+  
+  .service-list-item .list-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #F3F6FC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #1b7276;
+    transition: all 0.4s ease;
+  }
+  
+  .service-list-item.active .list-icon {
+    background: #1b7276;
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  }
+  
+  .service-list-item .list-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .service-list-item .list-info {
+    flex: 1;
+  }
+  
+  .service-list-item .list-info .list-title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .service-list-item .list-info .list-sub {
+    display: block;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    font-weight: 400;
+  }
+  
+  .service-list-item.active .list-info .list-sub {
+    color: #60A5FA;
+  }
+  
+  .service-list-item .list-number {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #9CA3AF;
+    letter-spacing: 1px;
+    background: #F3F4F6;
+    padding: 2px 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  .service-list-item.active .list-number {
+    background: #BFDBFE;
+    color: #2563EB;
+  }
+  
+  .service-list-item .active-indicator {
+    position: absolute;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1b7276;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .service-list-item.active .active-indicator {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* ===== كرت الخدمة ===== */
+  .service-detail-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.05);
+    border: 1px solid #F3F4F6;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    height: 100%;
+    min-height: 520px;
+  }
+  
+  /* ===== الصورة الرئيسية ===== */
+  .service-detail-card .main-image-wrapper {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    background: #1F2937;
+  }
+  
+  .service-detail-card .main-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+  }
+  
+  .service-detail-card .main-image-wrapper:hover img {
+    transform: scale(1.05);
+  }
+  
+  .service-detail-card .main-image-wrapper .image-overlay-grad {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+  }
+  
+  .service-detail-card .main-image-wrapper .image-counter {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+    padding: 6px 18px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .service-detail-card .main-image-wrapper .service-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(59, 130, 246, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 6px 16px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  /* ===== محتوى الكرت ===== */
+  .service-detail-card .detail-header {
+    padding: 28px 36px 16px;
+    border-bottom: 1px solid #F3F4F6;
+  }
+  
+  .service-detail-card .detail-header .detail-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #1b7276;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .service-detail-card .detail-header .detail-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #252932;
+    line-height: 1.2;
+  }
+  
+  .service-detail-card .detail-body {
+    padding: 24px 36px 32px;
+  }
+  
+  .service-detail-card .detail-desc {
+    color: #4B5563;
+    line-height: 1.9;
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    max-width: 90%;
+  }
+  
+  /* ===== معرض الصور المصغرة ===== */
+  .service-detail-card .image-gallery {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #D1D5DB transparent;
+  }
+  
+  .service-detail-card .image-gallery::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .service-detail-card .image-gallery::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 20px;
+  }
+  
+  .service-detail-card .gallery-thumb {
+    flex-shrink: 0;
+    width: 140px;
+    height: 90px;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    position: relative;
+  }
+  
+  .service-detail-card .gallery-thumb:hover {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+  
+  .service-detail-card .gallery-thumb.active {
+    border-color: #1b7276;
+    opacity: 1;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25);
+  }
+  
+  .service-detail-card .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .service-detail-card .gallery-thumb .thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .service-detail-card .gallery-thumb.active .thumb-overlay {
+    opacity: 0;
+  }
+  
+  .service-detail-card .gallery-thumb:hover .thumb-overlay {
+    opacity: 1;
+  }
+  
+  /* ===== أيقونات المميزات ===== */
+  .service-detail-card .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 20px 0 24px;
+  }
+  
+  .service-detail-card .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #F8FAFC;
+    border-radius: 12px;
+    border: 1px solid #F1F5F9;
+    transition: all 0.3s ease;
+  }
+  
+  .service-detail-card .feature-item:hover {
+    background: #EEF4FF;
+    border-color: #BFDBFE;
+    transform: translateY(-2px);
+  }
+  
+  .service-detail-card .feature-item .feature-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #DBEAFE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1b7276;
+    flex-shrink: 0;
+  }
+  
+  .service-detail-card .feature-item .feature-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .service-detail-card .feature-item .feature-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  /* ===== زر الخدمة ===== */
+  .service-detail-card .detail-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #1b7276, #1b7276);
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 4px 25px rgba(59, 130, 246, 0.3);
+  }
+  
+  .service-detail-card .detail-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 35px rgba(59, 130, 246, 0.4);
+  }
+  
+  .service-detail-card .detail-cta:active {
+    transform: scale(0.97);
+  }
+  
+  .service-detail-card .detail-cta svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-detail-card .detail-cta:hover svg {
+    transform: translateX(4px);
+  }
+  
+  /* ===== Reveal Animation ===== */
+  .service-detail-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .service-detail-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 1024px) {
+    .service-detail-card .main-image-wrapper {
+      height: 300px;
+    }
+    .service-detail-card .detail-header .detail-title {
+      font-size: 1.6rem;
+    }
+    .service-detail-card .gallery-thumb {
+      width: 110px;
+      height: 75px;
+    }
+    .service-detail-card .detail-desc {
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .service-detail-card .main-image-wrapper {
+      height: 250px;
+    }
+    .service-detail-card .detail-header {
+      padding: 20px 20px 12px;
+    }
+    .service-detail-card .detail-body {
+      padding: 16px 20px 24px;
+    }
+    .service-detail-card .detail-header .detail-title {
+      font-size: 1.4rem;
+    }
+    .service-detail-card .detail-desc {
+      font-size: 0.9rem;
+    }
+    .service-detail-card .gallery-thumb {
+      width: 90px;
+      height: 65px;
+    }
+    .service-detail-card .features-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .service-list-item {
+      padding: 12px 14px;
+      font-size: 0.9rem;
+    }
+    .service-list-item .list-icon {
+      width: 36px;
+      height: 36px;
+    }
+    .service-list-item .list-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-detail-card .main-image-wrapper {
+      height: 200px;
+    }
+    .service-detail-card .detail-header .detail-title {
+      font-size: 1.2rem;
+    }
+    .service-detail-card .detail-desc {
+      font-size: 0.85rem;
+    }
+    .service-detail-card .gallery-thumb {
+      width: 70px;
+      height: 55px;
+      border-radius: 10px;
+    }
+    .service-detail-card .detail-cta {
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      width: 100%;
+      justify-content: center;
+    }
+    .service-detail-card .features-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-list-item .list-info .list-title {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* ===== Reduced Motion ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .service-detail-card,
+    .service-list-item,
+    .service-list-item .active-indicator,
+    .service-detail-card .main-image-wrapper img,
+    .service-detail-card .detail-cta,
+    .service-detail-card .gallery-thumb {
+      transition-duration: 0.01ms !important;
+    }
+    .service-detail-card {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .service-list-item:hover {
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    'use strict';
+    
+    // ===== بيانات الخدمات =====
+    const services = [
+      {
+        id: 1,
+        number: "01",
+        title: "العلاج اليدوي",
+        description: "جلسات متخصصة لتخفيف الألم وتحسين الحركة باستخدام تقنيات العلاج اليدوي المتقدمة. يعمل العلاج اليدوي على تحسين مرونة المفاصل وتقليل التوتر العضلي وتحسين الدورة الدموية. يتم تنفيذ الجلسات بواسطة أخصائيين ذوي خبرة عالية في تقنيات التدليك العلاجي والتحريك المفصلي.",
+        icon: '<path d="M19 14v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6"/><path d="M3 14h18"/><path d="M12 14v8"/><path d="M8 6V2"/><path d="M16 6V2"/><rect x="6" y="6" width="12" height="8" rx="2"/>',
+        features: ["تدليك علاجي", "تحريك مفاصل", "تخفيف الألم", "تحسين المرونة"],
+        images: [
+          "./img/manual-therapy-1.webp",
+          "./img/manual-therapy-2.jpg",
+          "./img/manual-therapy-3.jpg",
+          "./img/manual-therapy-4.png"
+        ]
+      },
+      {
+        id: 2,
+        number: "02",
+        title: "الوخز بالإبر الجافة",
+        description: "تقنيات علاجية حديثة لتخفيف الشد العضلي والألم المزمن باستخدام الإبر الجافة. تعمل هذه التقنية على تحفيز نقاط التوتر العضلي لتحسين تدفق الدم وتخفيف الألم. تعتبر من أحدث التقنيات المستخدمة في مجال العلاج الطبيعي لعلاج آلام العضلات المزمنة.",
+        icon: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>',
+        features: ["علاج الشد العضلي", "تخفيف الألم المزمن", "تحفيز نقاط التوتر", "تحسين تدفق الدم"],
+        images: [
+          "./img/dry-needling-1.jpg",
+          "./img/dry-needling-2.png",
+          "./img/dry-needling-3.jfif",
+          "./img/dry-needling-4.png"
+        ]
+      },
+      {
+        id: 3,
+        number: "03",
+        title: "تمارين التأهيل",
+        description: "برامج علاجية لتحسين القوة والمرونة واستعادة الحركة بعد الإصابات والعمليات. يتم تصميم برامج تأهيلية مخصصة لكل حالة لضمان أفضل النتائج. تشمل البرامج تمارين تقوية عضلية، وتمارين إطالة، وتمارين توازن، مع متابعة دقيقة لتطور الحالة.",
+        icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',
+        features: ["تقوية عضلية", "تمارين إطالة", "استعادة الحركة", "متابعة دقيقة"],
+        images: [
+          "./img/rehabilitation-exercises-1.webp",
+          "./img/rehabilitation-exercises-2.jfif",
+          "./img/rehabilitation-exercises-3.jpg",
+          "./img/rehabilitation-exercises-4.png"
+        ]
+      },
+      {
+        id: 4,
+        number: "04",
+        title: "التصريف اللمفاوي",
+        description: "جلسات متخصصة لتحسين الدورة اللمفاوية وتقليل التورم وتحفيز الشفاء الطبيعي. تساعد هذه التقنية على إزالة السموم وتحسين تدفق السوائل في الجسم. تعتبر من العلاجات التكميلية الفعالة في حالات الوذمة والتورم بعد العمليات.",
+        icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>',
+        features: ["تحسين الدورة اللمفاوية", "تقليل التورم", "إزالة السموم", "تحفيز الشفاء"],
+        images: [
+          "./img/lymphatic-drainage-1.jpg",
+          "./img/lymphatic-drainage-2.jfif",
+          "./img/lymphatic-drainage-3.jpg",
+          "./img/lymphatic-drainage-4.png"
+        ]
+      },
+      // {
+      //   id: 5,
+      //   number: "05",
+      //   title: "التأهيل الرياضي",
+      //   description: "برامج متخصصة للتعافي من الإصابات الرياضية والعودة للنشاط بأمان وقوة أكبر. يتم التركيز على استعادة القوة والمرونة والثقة في الأداء الرياضي. تشمل البرامج تقييم دقيق للإصابة وبرنامج تأهيلي متكامل يعيد الرياضي إلى مستواه السابق.",
+      //   icon: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+      //   features: ["تعافي من الإصابات", "استعادة القوة", "العودة للنشاط", "برامج مخصصة"],
+      //   images: [
+      //     "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+      //     "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80",
+      //     "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80",
+      //     "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80"
+      //   ]
+      // },
+      {
+        id: 6,
+        number: "06",
+        title: "العلاج المنزلي",
+        description: "جلسات علاج طبيعي متخصصة في راحة منزلك مع متابعة دقيقة لتحقيق أفضل النتائج. نوفر لك الرعاية الصحية في منزلك مع أحدث الأجهزة والتقنيات. الخدمة مناسبة لكبار السن وذوي الاحتياجات الخاصة ومن يعانون من صعوبة في التنقل.",
+        icon: '<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>',
+        features: ["راحة المنزل", "رعاية متخصصة", "أحدث الأجهزة", "متابعة دقيقة"],
+        images: [
+          "./img/home-treatment-1.png",
+          "./img/home-treatment-2.jpg",
+          "./img/home-treatment-3.jfif",
+          "./img/home-treatment-4.jpg"
+        ]
+      }
+    ];
+    
+    // ===== DOM References =====
+    const menu = document.getElementById('servicesMenu');
+    const display = document.getElementById('serviceDisplay');
+    const section = document.getElementById('servicesSection');
+    
+    let currentServiceId = 1;
+    let currentImageIndex = 0;
+    let imageInterval = null;
+    
+    // ===== أيقونات المميزات =====
+    const featureIcons = {
+      "تدليك علاجي": '<circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/>',
+      "تحريك مفاصل": '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',
+      "تخفيف الألم": '<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>',
+      "تحسين المرونة": '<path d="M4 17L20 7"/><path d="M4 7L20 17"/>',
+      "علاج الشد العضلي": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',
+      "تحفيز نقاط التوتر": '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/>',
+      "تقوية عضلية": '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',
+      "تمارين إطالة": '<path d="M4 4L20 20"/><path d="M20 4L4 20"/>',
+      "استعادة الحركة": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>',
+      "متابعة دقيقة": '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+      "تحسين الدورة اللمفاوية": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 10l2 2 4-4"/>',
+      "تقليل التورم": '<circle cx="12" cy="12" r="10"/><path d="M8 8L16 16"/><path d="M16 8L8 16"/>',
+      "إزالة السموم": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="8" y1="11" x2="16" y2="11"/>',
+      "تحفيز الشفاء": '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+      "تعافي من الإصابات": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>',
+      "العودة للنشاط": '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+      "برامج مخصصة": '<path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>',
+      "راحة المنزل": '<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>',
+      "رعاية متخصصة": '<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>',
+      "أحدث الأجهزة": '<rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/>',
+      "تحسين تدفق الدم": '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 10"/>',
+      "الألم المزمن": '<circle cx="12" cy="12" r="10"/><path d="M8 8L16 16"/><path d="M16 8L8 16"/>'
+    };
+    
+    function getFeatureIcon(name) {
+      return featureIcons[name] || '<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>';
+    }
+    
+    // ===== بناء القائمة =====
+    function buildMenu() {
+      menu.innerHTML = '';
+      
+      services.forEach((service) => {
+        const item = document.createElement('div');
+        item.className = `service-list-item ${service.id === currentServiceId ? 'active' : ''}`;
+        item.dataset.id = service.id;
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('aria-label', `عرض خدمة ${service.title}`);
+        
+        item.innerHTML = `
+          <span class="list-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              ${service.icon}
+            </svg>
+          </span>
+          <span class="list-info">
+            <span class="list-title">${service.title}</span>
+            <span class="list-sub">${service.features[0]}</span>
+          </span>
+          <span class="list-number">${service.number}</span>
+          <span class="active-indicator"></span>
+        `;
+        
+        item.addEventListener('click', () => selectService(service.id));
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectService(service.id);
+          }
+        });
+        
+        menu.appendChild(item);
+      });
+    }
+    
+    // ===== بناء كرت الخدمة =====
+    function buildServiceCard(service) {
+      const card = document.createElement('div');
+      card.className = 'service-detail-card visible';
+      card.id = 'serviceCard';
+      
+      // الصور المصغرة
+      let galleryHtml = '';
+      service.images.forEach((img, idx) => {
+        galleryHtml += `
+          <div class="gallery-thumb ${idx === currentImageIndex ? 'active' : ''}" data-index="${idx}">
+            <img src="${img}" alt="${service.title} - صورة ${idx + 1}" loading="lazy" decoding="async">
+            <div class="thumb-overlay"></div>
+          </div>
+        `;
+      });
+      
+      // المميزات
+      let featuresHtml = '';
+      service.features.forEach(feature => {
+        featuresHtml += `
+          <div class="feature-item">
+            <span class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                ${getFeatureIcon(feature)}
+              </svg>
+            </span>
+            <span class="feature-text">${feature}</span>
+          </div>
+        `;
+      });
+      
+      card.innerHTML = `
+        <div class="main-image-wrapper">
+          <img src="${service.images[currentImageIndex]}" alt="${service.title}" id="mainServiceImage">
+          <div class="image-overlay-grad"></div>
+          <span class="service-badge">${service.number}</span>
+          <span class="image-counter">${currentImageIndex + 1} / ${service.images.length}</span>
+        </div>
+        <div class="detail-header">
+          <span class="detail-number">خدمة ${service.number}</span>
+          <h3 class="detail-title">${service.title}</h3>
+        </div>
+        <div class="detail-body">
+          <p class="detail-desc">${service.description}</p>
+          <div class="features-grid">${featuresHtml}</div>
+          <div class="image-gallery" id="imageGallery">
+            ${galleryHtml}
+          </div>
+          <button class="detail-cta">
+            <span>احجز الخدمة الآن</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+      `;
+      
+      // إضافة أحداث للصور المصغرة
+      setTimeout(() => {
+        const thumbs = card.querySelectorAll('.gallery-thumb');
+        thumbs.forEach((thumb) => {
+          thumb.addEventListener('click', function() {
+            const index = parseInt(this.dataset.index);
+            changeImage(index);
+          });
+        });
+      }, 100);
+      
+      return card;
+    }
+    
+    // ===== تغيير الصورة =====
+    function changeImage(index) {
+      const card = document.getElementById('serviceCard');
+      if (!card) return;
+      
+      const mainImg = card.querySelector('#mainServiceImage');
+      const thumbs = card.querySelectorAll('.gallery-thumb');
+      const counter = card.querySelector('.image-counter');
+      const service = services.find(s => s.id === currentServiceId);
+      
+      if (!service || !mainImg) return;
+      
+      currentImageIndex = index;
+      mainImg.style.opacity = '0';
+      setTimeout(() => {
+        mainImg.src = service.images[index];
+        mainImg.style.opacity = '1';
+      }, 80);
+      
+      thumbs.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+      
+      if (counter) {
+        counter.textContent = `${index + 1} / ${service.images.length}`;
+      }
+      
+      resetImageTimer();
+    }
+    
+    // ===== التبديل التلقائي للصور =====
+    function startImageTimer() {
+      if (imageInterval) clearInterval(imageInterval);
+      imageInterval = setInterval(() => {
+        const service = services.find(s => s.id === currentServiceId);
+        if (!service) return;
+        const nextIndex = (currentImageIndex + 1) % service.images.length;
+        changeImage(nextIndex);
+      }, 5000);
+    }
+    
+    function resetImageTimer() {
+      if (imageInterval) {
+        clearInterval(imageInterval);
+        imageInterval = null;
+      }
+      startImageTimer();
+    }
+    
+    // ===== اختيار خدمة =====
+    function selectService(serviceId) {
+      if (serviceId === currentServiceId) return;
+      
+      currentServiceId = serviceId;
+      currentImageIndex = 0;
+      
+      // تحديث القائمة
+      const items = menu.querySelectorAll('.service-list-item');
+      items.forEach(item => {
+        item.classList.toggle('active', parseInt(item.dataset.id) === serviceId);
+      });
+      
+      // تحديث الكرت
+      const service = services.find(s => s.id === serviceId);
+      if (!service) return;
+      
+      const newCard = buildServiceCard(service);
+      display.innerHTML = '';
+      display.appendChild(newCard);
+      
+      resetImageTimer();
+    }
+    
+    // ===== Scroll Reveal =====
+    function initScrollReveal() {
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const card = document.getElementById('serviceCard');
+              if (card) card.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+        
+        observer.observe(section);
+      }
+    }
+    
+    // ===== التهيئة =====
+    function init() {
+      buildMenu();
+      
+      const firstService = services[0];
+      const card = buildServiceCard(firstService);
+      display.appendChild(card);
+      
+      setTimeout(startImageTimer, 500);
+      initScrollReveal();
+    }
+    
+    // ===== بدء التشغيل =====
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+    
+    window.addEventListener('beforeunload', function() {
+      if (imageInterval) clearInterval(imageInterval);
+    });
+    
+  })();
+</script>
