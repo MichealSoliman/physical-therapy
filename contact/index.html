@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>اتصل بنا | تواصل مع مركز هنا التفاؤل للعلاج الطبيعي وحجز المواعيد</title>
-  <meta name="description" content="تواصل مع مركز هنا التفاؤل للعلاج الطبيعي والتأهيل بجدة. احجز موعدك عبر الواتساب أو الهاتف مباشرة على 0545282472 أو 0555766035.">
+  <meta name="description"
+    content="تواصل مع مركز هنا التفاؤل للعلاج الطبيعي والتأهيل بجدة. احجز موعدك عبر الواتساب أو الهاتف مباشرة على 0545282472 أو 0555766035.">
   <meta name="keywords" content="اتصل بنا, حجز موعد علاج طبيعي, واتساب مركز هنا التفاؤل, رقم هاتف علاج طبيعي جدة">
   <meta property="og:title" content="اتصل بنا وحجز موعد | مركز هنا التفاؤل للعلاج الطبيعي">
-  <meta property="og:description" content="فريقنا المتخصص بانتظار اتصالك للإجابة على استفساراتك وحجز موعدك. تواصل معنا الآن.">
+  <meta property="og:description"
+    content="فريقنا المتخصص بانتظار اتصالك للإجابة على استفساراتك وحجز موعدك. تواصل معنا الآن.">
   <meta property="og:type" content="website">
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Font: Cairo (Arabic) -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
-    body { font-family: 'Cairo', sans-serif; }
+    body {
+      font-family: 'Cairo', sans-serif;
+    }
+
     .hero-overlay {
       background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.1) 100%);
     }
+
     .nav-blur {
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
+
     .slide-transition {
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
     .fade-img {
       transition: opacity 0.7s ease;
     }
+
     .thumbnail-active {
       border: 4px solid #2563eb;
       box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
       transform: scale(1.06);
     }
+
     .thumbnail-item {
       transition: all 0.25s ease;
       cursor: pointer;
@@ -46,37 +57,45 @@
       width: 160px;
       height: 100px;
     }
+
     .thumbnail-item:hover {
       transform: scale(1.08);
       border-color: #60a5fa;
       box-shadow: 0 4px 20px rgba(96, 165, 250, 0.3);
     }
+
     .thumbnail-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     .stat-number {
       font-size: 2.4rem;
       font-weight: 800;
       line-height: 1.2;
       font-family: 'Cairo', sans-serif;
     }
+
     .thumbnails-scroll {
       scrollbar-width: thin;
       scrollbar-color: #2563eb #e5e7eb;
     }
+
     .thumbnails-scroll::-webkit-scrollbar {
       height: 5px;
     }
+
     .thumbnails-scroll::-webkit-scrollbar-thumb {
       background: #2563eb;
       border-radius: 20px;
     }
+
     .thumbnails-scroll::-webkit-scrollbar-track {
       background: #e5e7eb;
       border-radius: 20px;
     }
+
     .hamburger-line {
       display: block;
       width: 28px;
@@ -85,15 +104,19 @@
       margin: 5px 0;
       transition: 0.3s;
     }
+
     .hamburger-active .hamburger-line:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
+
     .hamburger-active .hamburger-line:nth-child(2) {
       opacity: 0;
     }
+
     .hamburger-active .hamburger-line:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
+
     .mobile-menu {
       transition: all 0.3s ease;
       transform: scaleY(0);
@@ -101,20 +124,24 @@
       opacity: 0;
       pointer-events: none;
     }
+
     .mobile-menu.open {
       transform: scaleY(1);
       opacity: 1;
       pointer-events: auto;
     }
+
     @media (min-width: 768px) {
       .mobile-menu {
         display: none !important;
       }
     }
+
     /* تحسين عرض الأرقام الإنجليزية */
     .stat-number {
       font-feature-settings: "tnum";
     }
+
     /* تكبير الصور المصغرة على الموبايل */
     @media (max-width: 640px) {
       .thumbnail-item {
@@ -124,635 +151,684 @@
     }
   </style>
 </head>
+
 <body>
 
-<!-- ============================================ -->
-<!-- HERO SECTION - مركز هنا التفائل للعلاج الطبيعي -->
-<!-- ============================================ -->
-<section class="relative w-full h-screen min-h-[700px] overflow-hidden" id="heroSection">
-  <!-- Background image -->
-  <div class="absolute inset-0 w-full h-full bg-black" id="heroBgContainer">
-    <img id="heroBgImage" src="../img/hero-1.webp" alt="مركز هنا التفائل للعلاج الطبيعي" 
-         class="absolute inset-0 w-full h-full object-cover fade-img transition-opacity duration-700">
-    <div class="absolute inset-0 hero-overlay"></div>
-  </div>
+  <!-- ============================================ -->
+  <!-- HERO SECTION - مركز هنا التفائل للعلاج الطبيعي -->
+  <!-- ============================================ -->
+  <section class="relative w-full h-screen min-h-[700px] overflow-hidden" id="heroSection">
+    <!-- Background image -->
+    <div class="absolute inset-0 w-full h-full bg-black" id="heroBgContainer">
+      <img id="heroBgImage" src="../img/hero-1.webp" alt="مركز هنا التفائل للعلاج الطبيعي"
+        class="absolute inset-0 w-full h-full object-cover fade-img transition-opacity duration-700">
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
 
-  <!-- ============ NAVBAR ============ -->
-  <nav class="fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-5 md:py-7 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" id="mainNav">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      
-      <!-- ===== الشعار ===== -->
-      <a href="../index.html" class="flex items-center gap-3 group cursor-pointer">
-        <div class="relative">
-          <div class="absolute inset-0 bg-[#1b7276]/20 blur-2xl rounded-full -z-10 group-hover:scale-150 transition-transform duration-700"></div>
-          <img src="../img/logo.png" alt="شعار مركز هنا التفائل" class="w-16 h-16">
-        </div>
-      </a>
+    <!-- ============ NAVBAR ============ -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-5 md:py-7 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      id="mainNav">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
 
-      <!-- ===== قائمة سطح المكتب ===== -->
-      <div class="hidden lg:flex items-center bg-white/90 backdrop-blur-xl rounded-full px-3 py-2 shadow-2xl border border-white/40 ring-1 ring-white/20 transition-all duration-500" id="navMenu">
-        <ul class="flex items-center gap-1 text-base font-medium text-gray-700">
-          <li>
-            <a href="../index.html" class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
-              الرئيسية
-               <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
-            </a>
-          </li>
-          <li>
-            <a href="../about/" class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
-              من نحن
-             <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
-            </a>
-          </li>
-          <li>
-            <a href="../services/" class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
-              خدماتنا
-              <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
-            </a>
-          </li>
-          <li>
-            <a href="../index.html#whyChooseUs" class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
-              لماذا تختارنا
-              <span class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="block px-6 py-3 rounded-full bg-[#1b7276] text-white shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105 text-base">
-              اتصل بنا
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- ===== CTA + Hamburger ===== -->
-      <div class="flex items-center gap-3 md:gap-4">
-        <a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 bg-[#1b7276] text-white px-8 py-3.5 rounded-full text-base font-semibold shadow-xl shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 hover:scale-105 transition-all duration-300 hover:-translate-y-0.5 group">
-          <span>احجز موعد</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
+        <!-- ===== الشعار ===== -->
+        <a href="../index.html" class="flex items-center gap-3 group cursor-pointer">
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-[#1b7276]/20 blur-2xl rounded-full -z-10 group-hover:scale-150 transition-transform duration-700">
+            </div>
+            <img src="../img/logo.png" alt="شعار مركز هنا التفائل" class="w-16 h-16">
+          </div>
         </a>
-        
-        <button id="hamburgerBtn" class="lg:hidden flex flex-col items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 hover:bg-white/30 transition-all duration-300 hover:scale-105 group" aria-label="القائمة">
-          <span class="hamburger-line w-7 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:bg-[#1b7276]"></span>
-          <span class="hamburger-line w-7 h-0.5 bg-white rounded-full transition-all duration-300 my-2 group-hover:bg-[#1b7276]"></span>
-          <span class="hamburger-line w-7 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:bg-[#1b7276]"></span>
-        </button>
-      </div>
 
-    </div>
-
-    <!-- ===== القائمة الجانبية (Mobile) ===== -->
-    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-xl z-50 transform -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden">
-      <button id="closeMobileMenu" class="absolute top-6 left-6 w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"/>
-          <line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-      
-      <div class="flex flex-col items-center justify-center h-full px-8">
-        <div class="flex items-center gap-3 mb-12">
-          <img src="../img/logo.png" alt="شعار مركز هنا التفائل" class="w-16 h-16">
-          <span class="text-3xl font-extrabold text-[#252932]">هنا التفائل</span>
+        <!-- ===== قائمة سطح المكتب ===== -->
+        <div
+          class="hidden lg:flex items-center bg-white/90 backdrop-blur-xl rounded-full px-3 py-2 shadow-2xl border border-white/40 ring-1 ring-white/20 transition-all duration-500"
+          id="navMenu">
+          <ul class="flex items-center gap-1 text-base font-medium text-gray-700">
+            <li>
+              <a href="../index.html"
+                class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
+                الرئيسية
+                <span
+                  class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
+              </a>
+            </li>
+            <li>
+              <a href="../about/"
+                class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
+                من نحن
+                <span
+                  class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
+              </a>
+            </li>
+            <li>
+              <a href="../services/"
+                class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
+                خدماتنا
+                <span
+                  class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
+              </a>
+            </li>
+            <li>
+              <a href="../index.html#whyChooseUs"
+                class="block px-6 py-3 rounded-full hover:bg-blue-50/80 transition-all duration-300 hover:text-[#1b7276] hover:scale-105 relative group text-base">
+                لماذا تختارنا
+                <span
+                  class="absolute bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#1b7276] transition-all duration-300 group-hover:w-1/2"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact"
+                class="block px-6 py-3 rounded-full bg-[#1b7276] text-white shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105 text-base">
+                اتصل بنا
+              </a>
+            </li>
+          </ul>
         </div>
-        
-        <ul class="flex flex-col items-center space-y-4 text-gray-800 w-full max-w-sm">
-          <li class="w-full"><a href="../index.html" class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">الرئيسية</a></li>
-          <li class="w-full"><a href="../about/" class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">من نحن</a></li>
-          <li class="w-full"><a href="../services/" class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">خدماتنا</a></li>
-          <li class="w-full"><a href="../index.html#whyChooseUs" class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">لماذا تختارنا</a></li>
-          <li class="w-full"><a href="#contact" class="block py-4 px-6 rounded-2xl bg-[#1b7276] text-white font-semibold text-xl text-center shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105">اتصل بنا</a></li>
-          <li class="w-full mt-6"><a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer" class="block py-4 px-6 rounded-2xl bg-[#1b7276] text-white font-semibold text-xl text-center shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105">احجز موعد</a></li>
-        </ul>
+
+        <!-- ===== CTA + Hamburger ===== -->
+        <div class="flex items-center gap-3 md:gap-4">
+          <a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer"
+            class="hidden md:inline-flex items-center gap-2 bg-[#1b7276] text-white px-8 py-3.5 rounded-full text-base font-semibold shadow-xl shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 hover:scale-105 transition-all duration-300 hover:-translate-y-0.5 group">
+            <span>احجز موعد</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+              class="transition-transform duration-300 group-hover:translate-x-1">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </a>
+
+          <button id="hamburgerBtn"
+            class="lg:hidden flex flex-col items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 hover:bg-white/30 transition-all duration-300 hover:scale-105 group"
+            aria-label="القائمة">
+            <span
+              class="hamburger-line w-7 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:bg-[#1b7276]"></span>
+            <span
+              class="hamburger-line w-7 h-0.5 bg-white rounded-full transition-all duration-300 my-2 group-hover:bg-[#1b7276]"></span>
+            <span
+              class="hamburger-line w-7 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:bg-[#1b7276]"></span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ===== القائمة الجانبية (Mobile) ===== -->
+      <div id="mobileMenu"
+        class="mobile-menu fixed top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-xl z-50 transform -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden">
+        <button id="closeMobileMenu"
+          class="absolute top-6 left-6 w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-all duration-300 hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <div class="flex flex-col items-center justify-center h-full px-8">
+          <div class="flex items-center gap-3 mb-12">
+            <img src="../img/logo.png" alt="شعار مركز هنا التفائل" class="w-16 h-16">
+            <span class="text-3xl font-extrabold text-[#252932]">هنا التفائل</span>
+          </div>
+
+          <ul class="flex flex-col items-center space-y-4 text-gray-800 w-full max-w-sm">
+            <li class="w-full"><a href="../index.html"
+                class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">الرئيسية</a>
+            </li>
+            <li class="w-full"><a href="../about/"
+                class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">من
+                نحن</a></li>
+            <li class="w-full"><a href="../services/"
+                class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">خدماتنا</a>
+            </li>
+            <li class="w-full"><a href="../index.html#whyChooseUs"
+                class="block py-4 px-6 rounded-2xl hover:bg-blue-50/80 transition-all duration-300 font-medium text-xl text-center hover:text-[#1b7276]">لماذا
+                تختارنا</a></li>
+            <li class="w-full"><a href="#contact"
+                class="block py-4 px-6 rounded-2xl bg-[#1b7276] text-white font-semibold text-xl text-center shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105">اتصل
+                بنا</a></li>
+            <li class="w-full mt-6"><a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer"
+                class="block py-4 px-6 rounded-2xl bg-[#1b7276] text-white font-semibold text-xl text-center shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105">احجز
+                موعد</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============ HERO CONTENT (في المنتصف) ============ -->
+    <div
+      class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 md:px-16 lg:px-24 z-10 text-white">
+      <div class="max-w-4xl slide-transition" id="heroContent">
+        <!-- عنوان فرعي -->
+        <span
+          class="inline-block bg-[#1b7276]/20 backdrop-blur-sm px-6 py-2 rounded-full text-[#1b7276] font-semibold text-sm md:text-base tracking-wider mb-4 border border-[#1b7276]/30">
+          تواصل معنا
+        </span>
+
+        <h1 id="heroTitle"
+          class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight drop-shadow-lg leading-tight">
+          نحن هنا<br>لخدمتك
+        </h1>
+
+        <p id="heroDesc"
+          class="mt-4 text-base md:text-lg lg:text-xl text-gray-200 max-w-2xl drop-shadow-md leading-relaxed mx-auto">
+          فريقنا المتخصص ينتظر اتصالك للإجابة على استفساراتك، وحجز موعدك، وتقديم الدعم اللازم لرحلتك نحو الصحة والشفاء.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+          <a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer" id="heroCta"
+            class="inline-block bg-[#1b7276] hover:bg-[#1b7276]/90 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105">
+            تواصل عبر الواتساب
+          </a>
+          <a href="tel:0545282472"
+            class="inline-flex items-center gap-2 text-white hover:text-[#1b7276] font-medium transition-all duration-300 group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>0545282472</span>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-10 flex flex-wrap justify-center gap-8 md:gap-12" id="heroStats">
+          <div class="text-center">
+            <div class="stat-number text-[#1b7276] text-4xl font-bold">24</div>
+            <div class="text-sm text-gray-300">ساعة خدمة على مدار الأسبوع</div>
+          </div>
+          <div class="text-center">
+            <div class="stat-number text-[#1b7276] text-4xl font-bold">+10</div>
+            <div class="text-sm text-gray-300">أخصائيين على استعداد للرد</div>
+          </div>
+          <div class="text-center">
+            <div class="stat-number text-[#1b7276] text-4xl font-bold">100٪</div>
+            <div class="text-sm text-gray-300">رضا العملاء عن خدماتنا</div>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
 
-  <!-- ============ HERO CONTENT (في المنتصف) ============ -->
-<div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 md:px-16 lg:px-24 z-10 text-white">
-  <div class="max-w-4xl slide-transition" id="heroContent">
-    <!-- عنوان فرعي -->
-    <span class="inline-block bg-[#1b7276]/20 backdrop-blur-sm px-6 py-2 rounded-full text-[#1b7276] font-semibold text-sm md:text-base tracking-wider mb-4 border border-[#1b7276]/30">
-      تواصل معنا
-    </span>
-    
-    <h1 id="heroTitle" class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight drop-shadow-lg leading-tight">
-      نحن هنا<br>لخدمتك
-    </h1>
-    
-    <p id="heroDesc" class="mt-4 text-base md:text-lg lg:text-xl text-gray-200 max-w-2xl drop-shadow-md leading-relaxed mx-auto">
-      فريقنا المتخصص ينتظر اتصالك للإجابة على استفساراتك، وحجز موعدك، وتقديم الدعم اللازم لرحلتك نحو الصحة والشفاء.
-    </p>
-    
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
-      <a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer" id="heroCta" class="inline-block bg-[#1b7276] hover:bg-[#1b7276]/90 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105">
-        تواصل عبر الواتساب
-      </a>
-      <a href="tel:0545282472" class="inline-flex items-center gap-2 text-white hover:text-[#1b7276] font-medium transition-all duration-300 group">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+    <!-- ===== سهم للتمرير لأسفل ===== -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+      <a href="#contact"
+        class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9" />
         </svg>
-        <span>0545282472</span>
       </a>
     </div>
-    
-    <!-- Stats -->
-    <div class="mt-10 flex flex-wrap justify-center gap-8 md:gap-12" id="heroStats">
-      <div class="text-center">
-        <div class="stat-number text-[#1b7276] text-4xl font-bold">24</div>
-        <div class="text-sm text-gray-300">ساعة خدمة على مدار الأسبوع</div>
-      </div>
-      <div class="text-center">
-        <div class="stat-number text-[#1b7276] text-4xl font-bold">+10</div>
-        <div class="text-sm text-gray-300">أخصائيين على استعداد للرد</div>
-      </div>
-      <div class="text-center">
-        <div class="stat-number text-[#1b7276] text-4xl font-bold">100٪</div>
-        <div class="text-sm text-gray-300">رضا العملاء عن خدماتنا</div>
-      </div>
-    </div>
-  </div>
-</div>
+  </section>
 
-<!-- ===== سهم للتمرير لأسفل ===== -->
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-  <a href="#contact" class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="6 9 12 15 18 9"/>
-    </svg>
-  </a>
-</div>
-</section>
+  <style>
+    /* ===== Overlay ===== */
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%);
+    }
 
-<style>
-  /* ===== Overlay ===== */
-  .hero-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
-  }
-  
-  /* ===== Navbar ===== */
-  #mainNav {
-    background: transparent;
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  #mainNav.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-  
-  /* #mainNav.scrolled .text-white:not(.text-[#1b7276]) {
+    /* ===== Navbar ===== */
+    #mainNav {
+      background: transparent;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #mainNav.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+
+    /* #mainNav.scrolled .text-white:not(.text-[#1b7276]) {
     color: #1F2937;
   }
    */
-  #mainNav.scrolled #navMenu {
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(0, 0, 0, 0.05);
-  }
-  
-  #mainNav.scrolled .hamburger-line {
-    background: #1F2937;
-  }
-  
-  #mainNav.scrolled .hamburger-line.group-hover\:bg-\[\#1b7276\] {
-    background: #1b7276;
-  }
-  
-  /* ===== خطوط الهامبرغر ===== */
-  .hamburger-line {
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .hamburger-active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
-    width: 32px;
-  }
-  
-  .hamburger-active .hamburger-line:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  
-  .hamburger-active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
-    width: 32px;
-  }
-  
-  /* ===== القائمة الجانبية ===== */
-  .mobile-menu {
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .mobile-menu.open {
-    transform: translateY(0);
-  }
-  
-  /* ===== أنيميشن المحتوى ===== */
-  .slide-transition {
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  
-  /* ===== تحسينات التجاوب ===== */
-  @media (max-width: 1024px) {
-    #mainNav {
-      padding-top: 16px;
-      padding-bottom: 16px;
+    #mainNav.scrolled #navMenu {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(0, 0, 0, 0.05);
     }
-    #mainNav.scrolled {
-      padding-top: 12px;
-      padding-bottom: 12px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    #mainNav {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-    #mainNav.scrolled {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-  }
-  
-  /* ===== Reduced Motion ===== */
-  @media (prefers-reduced-motion: reduce) {
-    #mainNav,
-    #mainNav.scrolled,
-    .mobile-menu,
-    .mobile-menu.open,
-    #mainNav a,
-    #mainNav button,
-    #mainNav .transition-all,
-    .slide-transition,
-    .animate-bounce {
-      transition-duration: 0.01ms !important;
-      animation: none !important;
-    }
-    #mainNav a:hover {
-      transform: none !important;
-    }
-  }
-</style>
 
-<script>
-  (function() {
-    'use strict';
-    
-    // ===== التحكم في الهامبرغر =====
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeBtn = document.getElementById('closeMobileMenu');
-    const body = document.body;
-    
-    function toggleMenu() {
-      hamburgerBtn.classList.toggle('hamburger-active');
-      mobileMenu.classList.toggle('open');
-      body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    #mainNav.scrolled .hamburger-line {
+      background: #1F2937;
     }
-    
-    function closeMenu() {
-      hamburgerBtn.classList.remove('hamburger-active');
-      mobileMenu.classList.remove('open');
-      body.style.overflow = '';
+
+    #mainNav.scrolled .hamburger-line.group-hover\:bg-\[\#1b7276\] {
+      background: #1b7276;
     }
-    
-    if (hamburgerBtn) {
-      hamburgerBtn.addEventListener('click', toggleMenu);
+
+    /* ===== خطوط الهامبرغر ===== */
+    .hamburger-line {
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeMenu);
+
+    .hamburger-active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+      width: 32px;
     }
-    
-    const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-    
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
-        closeMenu();
+
+    .hamburger-active .hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger-active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+      width: 32px;
+    }
+
+    /* ===== القائمة الجانبية ===== */
+    .mobile-menu {
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .mobile-menu.open {
+      transform: translateY(0);
+    }
+
+    /* ===== أنيميشن المحتوى ===== */
+    .slide-transition {
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* ===== تحسينات التجاوب ===== */
+    @media (max-width: 1024px) {
+      #mainNav {
+        padding-top: 16px;
+        padding-bottom: 16px;
       }
-    });
-    
-    // ===== تأثير التمرير =====
-    const nav = document.getElementById('mainNav');
-    let ticking = false;
-    
-    function updateNav() {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (currentScroll > 80) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-      
-      ticking = false;
-    }
-    
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          updateNav();
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-    
-    // ===== إضافة padding-top =====
-    function adjustPagePadding() {
-      const navHeight = nav.offsetHeight;
-      const heroSection = document.getElementById('heroSection');
-      if (heroSection) {
-        heroSection.style.paddingTop = navHeight + 'px';
+
+      #mainNav.scrolled {
+        padding-top: 12px;
+        padding-bottom: 12px;
       }
     }
-    
-    if (document.readyState === 'complete') {
-      setTimeout(adjustPagePadding, 100);
-    } else {
-      window.addEventListener('load', function() {
-        setTimeout(adjustPagePadding, 100);
+
+    @media (max-width: 768px) {
+      #mainNav {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      #mainNav.scrolled {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+
+    /* ===== Reduced Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+
+      #mainNav,
+      #mainNav.scrolled,
+      .mobile-menu,
+      .mobile-menu.open,
+      #mainNav a,
+      #mainNav button,
+      #mainNav .transition-all,
+      .slide-transition,
+      .animate-bounce {
+        transition-duration: 0.01ms !important;
+        animation: none !important;
+      }
+
+      #mainNav a:hover {
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // ===== التحكم في الهامبرغر =====
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeBtn = document.getElementById('closeMobileMenu');
+      const body = document.body;
+
+      function toggleMenu() {
+        hamburgerBtn.classList.toggle('hamburger-active');
+        mobileMenu.classList.toggle('open');
+        body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      }
+
+      function closeMenu() {
+        hamburgerBtn.classList.remove('hamburger-active');
+        mobileMenu.classList.remove('open');
+        body.style.overflow = '';
+      }
+
+      if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', toggleMenu);
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+      }
+
+      const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
       });
-    }
-    
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(adjustPagePadding, 200);
-    });
-    
-  })();
-</script>
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+
+      // ===== تأثير التمرير =====
+      const nav = document.getElementById('mainNav');
+      let ticking = false;
+
+      function updateNav() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > 80) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            updateNav();
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // ===== إضافة padding-top =====
+      function adjustPagePadding() {
+        const navHeight = nav.offsetHeight;
+        const heroSection = document.getElementById('heroSection');
+        if (heroSection) {
+          heroSection.style.paddingTop = navHeight + 'px';
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        setTimeout(adjustPagePadding, 100);
+      } else {
+        window.addEventListener('load', function () {
+          setTimeout(adjustPagePadding, 100);
+        });
+      }
+
+      let resizeTimeout;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(adjustPagePadding, 200);
+      });
+
+    })();
+  </script>
 
 
 
 
-<!-- ============================================ -->
-<!-- SECTION: اتصل بنا - مركز هنا التفائل         -->
-<!-- ============================================ -->
-<section class="w-full bg-white py-16 md:py-20 lg:py-24 overflow-hidden" id="contact">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- عنوان السكشن -->
-    <div class="text-center mb-12 md:mb-16">
-      <span class="inline-block text-[#1b7276] font-semibold text-sm md:text-base tracking-wider mb-2 bg-[#1b7276]/10 px-4 py-1.5 rounded-full border border-[#1b7276]/20">
-        تواصل معنا
-      </span>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] leading-tight">
-        نحن هنا لمساعدتك
-      </h2>
-      <p class="text-gray-500 mt-3 max-w-2xl mx-auto text-base md:text-lg">
-        تواصل مع فريقنا المتخصص للحصول على استشارة أو حجز موعد، وسنكون سعداء بخدمتك
-      </p>
-    </div>
+  <!-- ============================================ -->
+  <!-- SECTION: اتصل بنا - مركز هنا التفائل         -->
+  <!-- ============================================ -->
+  <section class="w-full bg-white py-16 md:py-20 lg:py-24 overflow-hidden" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Grid: نموذج + معلومات -->
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
-      
-      <!-- ===== العمود الأيسر: معلومات الاتصال ===== -->
-      <div class="lg:col-span-2 space-y-6">
-        <!-- بطاقة معلومات -->
-        <div class="bg-[#F3F6FC] rounded-2xl p-6 md:p-8">
-          <h3 class="text-xl font-bold text-[#252932] mb-6">معلومات التواصل</h3>
-          
-          <!-- الهاتف والواتس -->
-          <div class="flex items-start gap-4 mb-6">
-            <div class="w-12 h-12 rounded-xl bg-[#1b7276]/10 flex items-center justify-center text-[#1b7276] flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-            </div>
-            <div class="space-y-1">
-              <p class="text-sm text-gray-400">أرقام الاتصال والواتساب</p>
-              <div class="flex flex-col gap-1">
-                <a href="tel:0545282472" class="text-gray-800 font-bold hover:text-[#1b7276] transition-colors flex items-center gap-2">
-                  <span>0545282472</span>
-                  <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-normal">اتصال / واتساب</span>
-                </a>
-                <a href="tel:0555766035" class="text-gray-800 font-bold hover:text-[#1b7276] transition-colors flex items-center gap-2">
-                  <span>0555766035</span>
-                  <span class="text-xs bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full font-normal">اتصال / واتساب</span>
-                </a>
-              </div>
-              <p class="text-gray-500 text-xs mt-1">متاح 24 ساعة طوال الأسبوع</p>
-            </div>
-          </div>
-          
-          <!-- البريد الإلكتروني -->
-          <div class="flex items-start gap-4 mb-6">
-            <div class="w-12 h-12 rounded-xl bg-[#1b7276]/10 flex items-center justify-center text-[#1b7276] flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">البريد الإلكتروني</p>
-              <p class="text-gray-700 font-medium">info@hna-altfael.com</p>
-              <p class="text-gray-500 text-sm">نرد خلال 24 ساعة</p>
-            </div>
-          </div>
-          
-          <!-- الموقع -->
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-[#1b7276]/10 flex items-center justify-center text-[#1b7276] flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">العنوان</p>
-              <p class="text-gray-700 font-medium">جدة - المملكة العربية السعودية</p>
-              <p class="text-gray-500 text-sm">حي السلامة - شارع الأمير سلطان</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- ساعات العمل -->
-        <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
-          <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">ساعات العمل</h4>
-          <div class="space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="text-gray-600">السبت - الخميس</span>
-              <span class="text-gray-800 font-medium">٨:٠٠ ص - ١٠:٠٠ م</span>
-            </div>
-            <div class="flex justify-between items-center">
-              <span class="text-gray-600">الجمعة</span>
-              <span class="text-[#1b7276] font-medium">مغلق</span>
-            </div>
-            <div class="flex justify-between items-center pt-2 border-t border-gray-100 mt-2">
-              <span class="text-gray-600">الاستشارات الهاتفية</span>
-              <span class="text-gray-800 font-medium">٢٤ ساعة</span>
-            </div>
-          </div>
-        </div>
+      <!-- عنوان السكشن -->
+      <div class="text-center mb-12 md:mb-16">
+        <span
+          class="inline-block text-[#1b7276] font-semibold text-sm md:text-base tracking-wider mb-2 bg-[#1b7276]/10 px-4 py-1.5 rounded-full border border-[#1b7276]/20">
+          تواصل معنا
+        </span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] leading-tight">
+          نحن هنا لمساعدتك
+        </h2>
+        <p class="text-gray-500 mt-3 max-w-2xl mx-auto text-base md:text-lg">
+          تواصل مع فريقنا المتخصص للحصول على استشارة أو حجز موعد، وسنكون سعداء بخدمتك
+        </p>
       </div>
-      
-      <!-- ===== العمود الأيمن: نموذج الاتصال ===== -->
-      <div class="lg:col-span-3">
-        <div class="bg-[#F3F6FC] rounded-2xl p-6 md:p-8 lg:p-10">
-          <h3 class="text-xl font-bold text-[#252932] mb-2">أرسل لنا رسالة</h3>
-          <p class="text-gray-500 text-sm mb-6">سنقوم بالرد عليك في أقرب وقت ممكن</p>
-          
-          <form id="contactForm" class="space-y-5" novalidate>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label for="contactName" class="block text-sm font-medium text-gray-700 mb-1.5">الاسم الكامل</label>
-                <input 
-                  type="text" 
-                  id="contactName"
-                  placeholder="أدخل اسمك" 
-                  class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700"
-                  required
-                >
+
+      <!-- Grid: نموذج + معلومات -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
+
+        <!-- ===== العمود الأيسر: معلومات الاتصال ===== -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- بطاقة معلومات -->
+          <div class="bg-[#F3F6FC] rounded-2xl p-6 md:p-8">
+            <h3 class="text-xl font-bold text-[#252932] mb-6">معلومات التواصل</h3>
+
+            <!-- الهاتف والواتس -->
+            <div class="flex items-start gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-[#1b7276]/10 flex items-center justify-center text-[#1b7276] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div class="space-y-1">
+                <p class="text-sm text-gray-400">أرقام الاتصال والواتساب</p>
+                <div class="flex flex-col gap-1">
+                  <a href="tel:0545282472"
+                    class="text-gray-800 font-bold hover:text-[#1b7276] transition-colors flex items-center gap-2">
+                    <span>0545282472</span>
+                    <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-normal">اتصال /
+                      واتساب</span>
+                  </a>
+                  <a href="tel:0555766035"
+                    class="text-gray-800 font-bold hover:text-[#1b7276] transition-colors flex items-center gap-2">
+                    <span>0555766035</span>
+                    <span class="text-xs bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full font-normal">اتصال /
+                      واتساب</span>
+                  </a>
+                </div>
+                <p class="text-gray-500 text-xs mt-1">متاح 24 ساعة طوال الأسبوع</p>
+              </div>
+            </div>
+
+            <!-- البريد الإلكتروني -->
+            <div class="flex items-start gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-[#1b7276]/10 flex items-center justify-center text-[#1b7276] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
               </div>
               <div>
-                <label for="contactEmail" class="block text-sm font-medium text-gray-700 mb-1.5">البريد الإلكتروني</label>
-                <input 
-                  type="email" 
-                  id="contactEmail"
-                  placeholder="أدخل بريدك الإلكتروني" 
-                  class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700"
-                  required
-                >
+                <p class="text-sm text-gray-400">البريد الإلكتروني</p>
+                <p class="text-gray-700 font-medium">info@hna-altfael.com</p>
+                <p class="text-gray-500 text-sm">نرد خلال 24 ساعة</p>
               </div>
             </div>
-            
-            <div>
-              <label for="contactPhone" class="block text-sm font-medium text-gray-700 mb-1.5">رقم الهاتف</label>
-              <input 
-                type="tel" 
-                id="contactPhone"
-                placeholder="أدخل رقم هاتفك" 
-                class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700"
-              >
+
+            <!-- الموقع -->
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-[#1b7276]/10 flex items-center justify-center text-[#1b7276] flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-400">العنوان</p>
+                <p class="text-gray-700 font-medium">جدة - المملكة العربية السعودية</p>
+                <p class="text-gray-500 text-sm">حي السلامة - شارع الأمير سلطان</p>
+              </div>
             </div>
-            
-            <div>
-              <label for="contactSubject" class="block text-sm font-medium text-gray-700 mb-1.5">الموضوع</label>
-              <select 
-                id="contactSubject"
-                class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700 appearance-none"
-              >
-                <option value="">اختر الموضوع</option>
-                <option value="استشارة">استشارة طبية</option>
-                <option value="حجز موعد">حجز موعد</option>
-                <option value="استفسار">استفسار عام</option>
-                <option value="شكوى">شكوى أو اقتراح</option>
-                <option value="أخرى">أخرى</option>
-              </select>
+          </div>
+
+          <!-- ساعات العمل -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm">
+            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">ساعات العمل</h4>
+            <div class="space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">السبت - الخميس</span>
+                <span class="text-gray-800 font-medium">٨:٠٠ ص - ١٠:٠٠ م</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">الجمعة</span>
+                <span class="text-[#1b7276] font-medium">مغلق</span>
+              </div>
+              <div class="flex justify-between items-center pt-2 border-t border-gray-100 mt-2">
+                <span class="text-gray-600">الاستشارات الهاتفية</span>
+                <span class="text-gray-800 font-medium">٢٤ ساعة</span>
+              </div>
             </div>
-            
-            <div>
-              <label for="contactMessage" class="block text-sm font-medium text-gray-700 mb-1.5">الرسالة</label>
-              <textarea 
-                id="contactMessage"
-                rows="5"
-                placeholder="اكتب رسالتك هنا..." 
-                class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700 resize-none"
-                required
-              ></textarea>
-            </div>
-            
-            <button 
-              type="submit"
-              class="w-full bg-[#1b7276] hover:bg-[#1b7276]/90 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
-            >
-              <span>إرسال الرسالة</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1">
-                <line x1="22" y1="2" x2="11" y2="13"/>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-              </svg>
-            </button>
-            
-            <div id="contactMessageStatus" class="text-sm text-center mt-2"></div>
-          </form>
+          </div>
+        </div>
+
+        <!-- ===== العمود الأيمن: نموذج الاتصال ===== -->
+        <div class="lg:col-span-3">
+          <div class="bg-[#F3F6FC] rounded-2xl p-6 md:p-8 lg:p-10">
+            <h3 class="text-xl font-bold text-[#252932] mb-2">أرسل لنا رسالة</h3>
+            <p class="text-gray-500 text-sm mb-6">سنقوم بالرد عليك في أقرب وقت ممكن</p>
+
+            <form id="contactForm" class="space-y-5" novalidate>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contactName" class="block text-sm font-medium text-gray-700 mb-1.5">الاسم الكامل</label>
+                  <input type="text" id="contactName" placeholder="أدخل اسمك"
+                    class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700"
+                    required>
+                </div>
+                <div>
+                  <label for="contactEmail" class="block text-sm font-medium text-gray-700 mb-1.5">البريد
+                    الإلكتروني</label>
+                  <input type="email" id="contactEmail" placeholder="أدخل بريدك الإلكتروني"
+                    class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700"
+                    required>
+                </div>
+              </div>
+
+              <div>
+                <label for="contactPhone" class="block text-sm font-medium text-gray-700 mb-1.5">رقم الهاتف</label>
+                <input type="tel" id="contactPhone" placeholder="أدخل رقم هاتفك"
+                  class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700">
+              </div>
+
+              <div>
+                <label for="contactSubject" class="block text-sm font-medium text-gray-700 mb-1.5">الموضوع</label>
+                <select id="contactSubject"
+                  class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700 appearance-none">
+                  <option value="">اختر الموضوع</option>
+                  <option value="استشارة">استشارة طبية</option>
+                  <option value="حجز موعد">حجز موعد</option>
+                  <option value="استفسار">استفسار عام</option>
+                  <option value="شكوى">شكوى أو اقتراح</option>
+                  <option value="أخرى">أخرى</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="contactMessage" class="block text-sm font-medium text-gray-700 mb-1.5">الرسالة</label>
+                <textarea id="contactMessage" rows="5" placeholder="اكتب رسالتك هنا..."
+                  class="w-full px-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-[#1b7276] focus:ring-2 focus:ring-[#1b7276]/20 outline-none transition-all duration-300 text-gray-700 resize-none"
+                  required></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-[#1b7276] hover:bg-[#1b7276]/90 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-[#1b7276]/30 hover:shadow-[#1b7276]/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group">
+                <span>إرسال الرسالة</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  class="transition-transform duration-300 group-hover:translate-x-1">
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </button>
+
+              <div id="contactMessageStatus" class="text-sm text-center mt-2"></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== خريطة ===== -->
+      <div class="mt-12 md:mt-16 rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59452.43873738937!2d39.1506602!3d21.4225103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3e4c4e5e5e5e5%3A0x7b7b7b7b7b7b7b7b!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1700000000000"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" class="w-full"
+          title="موقع مركز هنا التفائل للعلاج الطبيعي"></iframe>
+        <div
+          class="p-4 bg-gray-50 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-100">
+          <span class="text-sm font-semibold text-gray-700">موقع مركز هنا التفائل على الخريطة:</span>
+          <a href="https://maps.app.goo.gl/m9bfrJV4Z4KXpiaw5" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-[#1b7276] text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#1b7276]/90 transition-all shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>فتح في خرائط جوجل (Google Maps)</span>
+          </a>
         </div>
       </div>
-      
-    </div>
-    
-    <!-- ===== خريطة ===== -->
-    <div class="mt-12 md:mt-16 rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59452.43873738937!2d39.1506602!3d21.4225103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3e4c4e5e5e5e5%3A0x7b7b7b7b7b7b7b7b!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2seg!4v1700000000000" 
-        width="100%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade"
-        class="w-full"
-        title="موقع مركز هنا التفائل للعلاج الطبيعي"
-      ></iframe>
-      <div class="p-4 bg-gray-50 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-100">
-        <span class="text-sm font-semibold text-gray-700">موقع مركز هنا التفائل على الخريطة:</span>
-        <a href="https://maps.app.goo.gl/m9bfrJV4Z4KXpiaw5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#1b7276] text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#1b7276]/90 transition-all shadow-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>فتح في خرائط جوجل (Google Maps)</span>
-        </a>
-      </div>
-    </div>
-    
-  </div>
-</section>
 
-<style>
-  /* ===== CSS إضافي ===== */
-  
-  /* ===== تحسينات النموذج ===== */
-  #contactForm input,
-  #contactForm textarea,
-  #contactForm select {
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  #contactForm input:focus,
-  #contactForm textarea:focus,
-  #contactForm select:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(27, 114, 118, 0.08);
-  }
-  
-  #contactForm input:hover,
-  #contactForm textarea:hover,
-  #contactForm select:hover {
-    border-color: #cbd5e1;
-  }
-  
-  /* ===== تنسيق الخريطة ===== */
-  .rounded-2xl iframe {
-    transition: all 0.5s ease;
-  }
-  
-  .rounded-2xl:hover iframe {
-    filter: brightness(1.02);
-  }
-  
-  /* ===== Reduced Motion ===== */
-  @media (prefers-reduced-motion: reduce) {
+    </div>
+  </section>
+
+  <style>
+    /* ===== CSS إضافي ===== */
+
+    /* ===== تحسينات النموذج ===== */
     #contactForm input,
     #contactForm textarea,
-    #contactForm select,
-    .rounded-2xl iframe {
-      transition-duration: 0.01ms !important;
+    #contactForm select {
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
-  }
-  
-  /* ===== Responsive ===== */
-  /* @media (max-width: 768px) {
+
+    #contactForm input:focus,
+    #contactForm textarea:focus,
+    #contactForm select:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(27, 114, 118, 0.08);
+    }
+
+    #contactForm input:hover,
+    #contactForm textarea:hover,
+    #contactForm select:hover {
+      border-color: #cbd5e1;
+    }
+
+    /* ===== تنسيق الخريطة ===== */
+    .rounded-2xl iframe {
+      transition: all 0.5s ease;
+    }
+
+    .rounded-2xl:hover iframe {
+      filter: brightness(1.02);
+    }
+
+    /* ===== Reduced Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+
+      #contactForm input,
+      #contactForm textarea,
+      #contactForm select,
+      .rounded-2xl iframe {
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ===== Responsive ===== */
+    /* @media (max-width: 768px) {
     .bg-[#f3f6fc].rounded-2xl.p-6 {
         
       padding: 18px !important;
@@ -775,848 +851,1156 @@
       height: 20px !important;
     }
   } */
-</style>
+  </style>
 
-<script>
-  (function() {
-    'use strict';
-    
-    // ===== نموذج الاتصال =====
-    const form = document.getElementById('contactForm');
-    const statusDiv = document.getElementById('contactMessageStatus');
-    
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('contactName').value.trim();
-        const email = document.getElementById('contactEmail').value.trim();
-        const message = document.getElementById('contactMessage').value.trim();
-        
-        // التحقق من الحقول
-        if (!name || !email || !message) {
-          statusDiv.innerHTML = '<span class="text-red-500">✕ الرجاء تعبئة جميع الحقول المطلوبة</span>';
-          return;
-        }
-        
-        // التحقق من البريد الإلكتروني
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          statusDiv.innerHTML = '<span class="text-red-500">✕ الرجاء إدخال بريد إلكتروني صحيح</span>';
-          return;
-        }
-        
-        // محاكاة الإرسال
-        statusDiv.innerHTML = '<span class="text-[#1b7276]">✓ جاري إرسال الرسالة...</span>';
-        
-        setTimeout(() => {
-          statusDiv.innerHTML = '<span class="text-green-600">✓ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</span>';
-          form.reset();
-          
-          setTimeout(() => {
-            statusDiv.innerHTML = '';
-          }, 6000);
-        }, 1500);
-      });
-    }
-    
-    // ===== Scroll Reveal Animation =====
-    const section = document.getElementById('contact');
-    const elements = section.querySelectorAll('.bg-[#F3F6FC], .bg-white.rounded-2xl, .rounded-2xl.overflow-hidden');
-    
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target;
-            const index = Array.from(elements).indexOf(el);
-            const delay = index * 150;
-            
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            
-            setTimeout(() => {
-              el.style.transition = 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
-              el.style.opacity = '1';
-              el.style.transform = 'translateY(0)';
-            }, delay);
-            
-            observer.unobserve(el);
+  <script>
+    (function () {
+      'use strict';
+
+      // ===== نموذج الاتصال =====
+      const form = document.getElementById('contactForm');
+      const statusDiv = document.getElementById('contactMessageStatus');
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById('contactName').value.trim();
+          const email = document.getElementById('contactEmail').value.trim();
+          const message = document.getElementById('contactMessage').value.trim();
+
+          // التحقق من الحقول
+          if (!name || !email || !message) {
+            statusDiv.innerHTML = '<span class="text-red-500">✕ الرجاء تعبئة جميع الحقول المطلوبة</span>';
+            return;
           }
+
+          // التحقق من البريد الإلكتروني
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            statusDiv.innerHTML = '<span class="text-red-500">✕ الرجاء إدخال بريد إلكتروني صحيح</span>';
+            return;
+          }
+
+          // محاكاة الإرسال
+          statusDiv.innerHTML = '<span class="text-[#1b7276]">✓ جاري إرسال الرسالة...</span>';
+
+          setTimeout(() => {
+            statusDiv.innerHTML = '<span class="text-green-600">✓ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</span>';
+            form.reset();
+
+            setTimeout(() => {
+              statusDiv.innerHTML = '';
+            }, 6000);
+          }, 1500);
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-      
-      elements.forEach(el => observer.observe(el));
-    } else {
-      elements.forEach(el => {
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-      });
-    }
-    
-  })();
-</script>
+      }
 
+      // ===== Scroll Reveal Animation =====
+      const section = document.getElementById('contact');
+      const elements = section.querySelectorAll('.bg-[#F3F6FC], .bg-white.rounded-2xl, .rounded-2xl.overflow-hidden');
 
-
-
-
-
-<!-- ============================================ -->
-<!-- SECTION: لماذا تختارنا؟ (Why Choose Us)      -->
-<!-- ============================================ -->
-<section class="w-full bg-white py-16 md:py-20 lg:py-24 overflow-hidden" id="whyChooseUs">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Grid: عمودين -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      
-      <!-- ========== الجانب الأيمن: المحتوى ========== -->
-      <div class="order-2 lg:order-1">
-        <!-- عنوان فرعي -->
-        <span class="inline-block text-[#1b7276] font-semibold text-sm md:text-base tracking-wider mb-3 reveal-text">
-          لماذا تختارنا؟
-        </span>
-        
-        <!-- العنوان الرئيسي -->
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] leading-tight mb-8 reveal-text">
-          لماذا نحن الخيار الأفضل<br class="hidden sm:block">
-          لرعايتك الصحية؟
-        </h2>
-        
-        <!-- شبكة المميزات 2×2 -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 relative">
-          
-          <!-- ===== الخطوط الفاصلة ===== -->
-          <!-- خط عمودي فاصل (يظهر فقط على Desktop) -->
-          <div class="hidden sm:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-[#EEF0F3] z-0"></div>
-          <!-- خط أفقي فاصل (يظهر فقط على Desktop) -->
-          <div class="hidden sm:block absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1px] bg-[#EEF0F3] z-0"></div>
-          
-          <!-- ===== CARD 1 ===== -->
-          <div class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
-            <div class="flex flex-col items-center">
-              <!-- أيقونة -->
-              <div class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              <!-- العنوان -->
-              <h3 class="text-lg font-semibold text-[#252932] mb-2">خبرة وكفاءة عالية</h3>
-              <!-- الوصف -->
-              <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
-                نقدم رعاية علاجية متخصصة على أيدي فريق يمتلك الخبرة والكفاءة لتلبية احتياجات كل حالة.
-              </p>
-            </div>
-          </div>
-          
-          <!-- ===== CARD 2 ===== -->
-          <div class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
-            <div class="flex flex-col items-center">
-              <div class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-[#252932] mb-2">رعاية متكاملة</h3>
-              <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
-                نوفر لك تجربة علاجية متكاملة تبدأ من التقييم الدقيق وحتى استعادة الحركة وتحسين جودة الحياة.
-              </p>
-            </div>
-          </div>
-          
-          <!-- ===== CARD 3 ===== -->
-          <div class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
-            <div class="flex flex-col items-center">
-              <div class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-[#252932] mb-2">خطط علاجية مخصصة</h3>
-              <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
-                نضع برنامجًا علاجيًا مناسبًا لحالتك وأهدافك لضمان الحصول على أفضل النتائج الممكنة.
-              </p>
-            </div>
-          </div>
-          
-          <!-- ===== CARD 4 ===== -->
-          <div class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
-            <div class="flex flex-col items-center">
-              <div class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-[#252932] mb-2">أحدث تقنيات العلاج</h3>
-              <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
-                نعتمد على أساليب وتقنيات حديثة في العلاج الطبيعي والتأهيل لتقديم رعاية فعالة وآمنة.
-              </p>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-      <!-- ========== الجانب الأيسر: الصورة ========== -->
-      <div class="order-1 lg:order-2 overflow-hidden rounded-3xl reveal-image">
-  <video
-    class="w-full h-[400px] md:h-[500px] lg:h-[590px] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-700"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    poster="../img/img4.webp"
-    aria-label="فيديو جلسة علاج طبيعي وتأهيل متخصصة"
-  >
-    <source src="../video1.mp4" type="video/mp4">
-    متصفحك لا يدعم تشغيل الفيديو.
-  </video>
-</div>
-      
-    </div>
-  </div>
-</section>
-
-<style>
-  /* ===== CSS إضافي ===== */
-  .card-item {
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .card-item:hover {
-    transform: translateY(-4px);
-  }
-  
-  .card-item .w-14 {
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .card-item:hover .w-14 {
-    transform: scale(1.1) rotate(8deg);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-  }
-  
-  /* ===== Reveal Animations ===== */
-  .reveal-text {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .reveal-text.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .reveal-image {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .reveal-image.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .card-item {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  
-  .card-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* ===== خطوط فاصلة ===== */
-  @media (max-width: 640px) {
-    .grid .absolute {
-      display: none !important;
-    }
-  }
-  
-  /* ===== Reduced Motion ===== */
-  @media (prefers-reduced-motion: reduce) {
-    .reveal-text,
-    .reveal-image,
-    .card-item {
-      opacity: 1 !important;
-      transform: none !important;
-      transition-duration: 0.01ms !important;
-    }
-    .card-item:hover {
-      transform: none !important;
-    }
-    img.hover\:scale-\[1\.02\] {
-      transform: none !important;
-    }
-  }
-</style>
-
-<script>
-  (function() {
-    'use strict';
-    
-    // ===== Intersection Observer للـ Reveal Animations =====
-    const section = document.getElementById('whyChooseUs');
-    
-    if (section) {
-      // التحقق من تفضيل تقليل الحركة
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      
-      if (!prefersReducedMotion) {
-        // العناصر المراد تحريكها
-        const revealTexts = section.querySelectorAll('.reveal-text');
-        const revealImage = section.querySelector('.reveal-image');
-        const cardItems = section.querySelectorAll('.card-item');
-        
-        // إنشاء Observer
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // تفعيل النصوص
-              revealTexts.forEach((el, index) => {
-                setTimeout(() => {
-                  el.classList.add('visible');
-                }, index * 100);
-              });
-              
-              // تفعيل الصورة
-              if (revealImage) {
-                setTimeout(() => {
-                  revealImage.classList.add('visible');
-                }, 150);
-              }
-              
-              // تفعيل البطاقات مع Stagger
-              cardItems.forEach((card, index) => {
-                setTimeout(() => {
-                  card.classList.add('visible');
-                }, 250 + (index * 100));
-              });
-              
-              // إلغاء المراقبة بعد التفعيل
-              observer.unobserve(entry.target);
+              const el = entry.target;
+              const index = Array.from(elements).indexOf(el);
+              const delay = index * 150;
+
+              el.style.opacity = '0';
+              el.style.transform = 'translateY(30px)';
+
+              setTimeout(() => {
+                el.style.transition = 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+              }, delay);
+
+              observer.unobserve(el);
             }
           });
         }, {
-          threshold: 0.15,
+          threshold: 0.1,
           rootMargin: '0px 0px -50px 0px'
         });
-        
-        // بدء المراقبة
-        observer.observe(section);
-        
-        // تعيين المظهر الأولي للعناصر
-        // (تم بالفعل عبر CSS)
+
+        elements.forEach(el => observer.observe(el));
       } else {
-        // إذا كان المستخدم يفضل تقليل الحركة، أظهر كل شيء فوراً
-        section.querySelectorAll('.reveal-text, .reveal-image, .card-item').forEach(el => {
-          el.classList.add('visible');
+        elements.forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
         });
       }
+
+    })();
+  </script>
+
+
+
+
+
+
+  <!-- ============================================ -->
+  <!-- SECTION: لماذا تختارنا؟ (Why Choose Us)      -->
+  <!-- ============================================ -->
+  <section class="w-full bg-white py-16 md:py-20 lg:py-24 overflow-hidden" id="whyChooseUs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Grid: عمودين -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- ========== الجانب الأيمن: المحتوى ========== -->
+        <div class="order-2 lg:order-1">
+          <!-- عنوان فرعي -->
+          <span class="inline-block text-[#1b7276] font-semibold text-sm md:text-base tracking-wider mb-3 reveal-text">
+            لماذا تختارنا؟
+          </span>
+
+          <!-- العنوان الرئيسي -->
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] leading-tight mb-8 reveal-text">
+            لماذا نحن الخيار الأفضل<br class="hidden sm:block">
+            لرعايتك الصحية؟
+          </h2>
+
+          <!-- شبكة المميزات 2×2 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 relative">
+
+            <!-- ===== الخطوط الفاصلة ===== -->
+            <!-- خط عمودي فاصل (يظهر فقط على Desktop) -->
+            <div class="hidden sm:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-[#EEF0F3] z-0">
+            </div>
+            <!-- خط أفقي فاصل (يظهر فقط على Desktop) -->
+            <div class="hidden sm:block absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1px] bg-[#EEF0F3] z-0">
+            </div>
+
+            <!-- ===== CARD 1 ===== -->
+            <div
+              class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
+              <div class="flex flex-col items-center">
+                <!-- أيقونة -->
+                <div
+                  class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <!-- العنوان -->
+                <h3 class="text-lg font-semibold text-[#252932] mb-2">خبرة وكفاءة عالية</h3>
+                <!-- الوصف -->
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                  نقدم رعاية علاجية متخصصة على أيدي فريق يمتلك الخبرة والكفاءة لتلبية احتياجات كل حالة.
+                </p>
+              </div>
+            </div>
+
+            <!-- ===== CARD 2 ===== -->
+            <div
+              class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-[#252932] mb-2">رعاية متكاملة</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                  نوفر لك تجربة علاجية متكاملة تبدأ من التقييم الدقيق وحتى استعادة الحركة وتحسين جودة الحياة.
+                </p>
+              </div>
+            </div>
+
+            <!-- ===== CARD 3 ===== -->
+            <div
+              class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-[#252932] mb-2">خطط علاجية مخصصة</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                  نضع برنامجًا علاجيًا مناسبًا لحالتك وأهدافك لضمان الحصول على أفضل النتائج الممكنة.
+                </p>
+              </div>
+            </div>
+
+            <!-- ===== CARD 4 ===== -->
+            <div
+              class="card-item bg-white border border-gray-200 rounded-2xl p-6 text-center hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg transition-all duration-300 relative z-10">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-[#1b7276] flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110 hover:rotate-12">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-[#252932] mb-2">أحدث تقنيات العلاج</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
+                  نعتمد على أساليب وتقنيات حديثة في العلاج الطبيعي والتأهيل لتقديم رعاية فعالة وآمنة.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========== الجانب الأيسر: الصورة ========== -->
+        <div class="order-1 lg:order-2 overflow-hidden rounded-3xl reveal-image">
+          <video
+            class="w-full h-[400px] md:h-[500px] lg:h-[590px] object-cover rounded-3xl hover:scale-[1.02] transition-transform duration-700"
+            autoplay muted loop playsinline preload="metadata" poster="../img/img4.webp"
+            aria-label="فيديو جلسة علاج طبيعي وتأهيل متخصصة">
+            <source src="../video1.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ===== CSS إضافي ===== */
+    .card-item {
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    
-  })();
-</script>
 
-
-
-<!-- ============================================ -->
-<!-- SECTION: فريق العمل - كروت الأطباء المتميزة -->
-<!-- ============================================ -->
-<section class="py-20 md:py-28 bg-[#F3F6FC] relative overflow-hidden" id="teamSectionUnique">
-  <!-- خلفية زخرفية -->
-  <div class="absolute inset-0 opacity-40 pointer-events-none">
-    <div class="absolute top-1/4 -right-20 w-96 h-96 bg-[#1b7276]/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
-  </div>
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-      <span class="inline-block bg-[#1b7276]/10 text-[#1b7276] px-5 py-2 rounded-full font-bold text-sm mb-3 border border-[#1b7276]/20 shadow-sm">
-        نخبة الأخصائيين
-      </span>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] tracking-tight leading-tight">
-        فريقنا الطبي المتخصص
-      </h2>
-      <p class="mt-3 text-base md:text-lg text-gray-600 leading-relaxed">
-        نضم نخبة من أفضل الكوادر والخبرات المتميزة في العلاج الطبيعي والتأهيل لمساعدتك على استعادة صحتك ونشاطك.
-      </p>
-    </div>
-
-    <!-- Grid Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-      
-      <!-- Card 1 -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
-        <div class="relative h-72 overflow-hidden bg-gray-100">
-          <img src="../img/team-1.jpeg" alt="د. محمد عبدالعاطي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-          <span class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-            أخصائي معتمد
-          </span>
-        </div>
-        <div class="p-6 flex flex-col flex-1">
-          <h3 class="text-xl font-bold text-[#252932]">د. محمد عبدالعاطي</h3>
-          <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي إصابات الملاعب والتأهيل الرياضي</p>
-          <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
-            متخصص في علاج وتأهيل إصابات الملاعب والإصابات الرياضية، ويقدم برامج تأهيلية متكاملة تساعد الرياضيين على استعادة القوة والحركة والمرونة، والعودة الآمنة لممارسة النشاط الرياضي بأفضل مستوى.
-          </p>
-          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-1.5">
-              <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="إكس">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="انستغرام">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="سناب شات">
-                <i class="fa-brands fa-snapchat"></i>
-              </a>
-              <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="فيسبوك">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-            </div>
-            <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20محمد%20عبدالعاطي" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
-              <i class="fa-brands fa-whatsapp text-sm"></i>
-              <span>احجز الآن</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
-        <div class="relative h-72 overflow-hidden bg-gray-100">
-          <img src="../img/team-2.jpeg" alt="د. فهد حسين شراحيلي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-          <span class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-            أخصائي معتمد
-          </span>
-        </div>
-        <div class="p-6 flex flex-col flex-1">
-          <h3 class="text-xl font-bold text-[#252932]">د. فهد حسين شراحيلي</h3>
-          <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي علاج طبيعي</p>
-          <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
-            متخصص في تقييم وعلاج مشكلات الجهاز العضلي والحركي، ويقدم برامج علاج طبيعي وتأهيل مخصصة تساعد على تخفيف الألم، وتحسين الحركة والمرونة، واستعادة الوظائف الحركية بكفاءة وأمان.
-          </p>
-          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-1.5">
-              <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="إكس">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="انستغرام">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="سناب شات">
-                <i class="fa-brands fa-snapchat"></i>
-              </a>
-              <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="فيسبوك">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-            </div>
-            <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20فهد%20حسين%20شراحيلي" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
-              <i class="fa-brands fa-whatsapp text-sm"></i>
-              <span>احجز الآن</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
-        <div class="relative h-72 overflow-hidden bg-gray-100">
-          <img src="../img/team-4.jpeg" alt="د. زينب محمد الامين" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-          <span class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-            أخصائية معتمدة
-          </span>
-        </div>
-        <div class="p-6 flex flex-col flex-1">
-          <h3 class="text-xl font-bold text-[#252932]">د. زينب محمد الامين</h3>
-          <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائية حجامة</p>
-          <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
-            متخصصة في تقديم جلسات الحجامة باهتمام واحترافية، مع مراعاة احتياجات كل حالة وتطبيق أعلى معايير النظافة والسلامة، بهدف دعم الشعور بالراحة وتحسين الصحة العامة.
-          </p>
-          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-1.5">
-              <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="إكس">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="انستغرام">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="سناب شات">
-                <i class="fa-brands fa-snapchat"></i>
-              </a>
-              <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="فيسبوك">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-            </div>
-            <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20زينب%20محمد%20الامين" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
-              <i class="fa-brands fa-whatsapp text-sm"></i>
-              <span>احجز الآن</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
-        <div class="relative h-72 overflow-hidden bg-gray-100">
-          <img src="../img/team-3.jfif" alt="د. سالم إبراهيم سمرة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-          <span class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-            أخصائي معتمد
-          </span>
-        </div>
-        <div class="p-6 flex flex-col flex-1">
-          <h3 class="text-xl font-bold text-[#252932]">د. سالم إبراهيم سمرة</h3>
-          <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي علاج طبيعي وحجامة</p>
-          <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
-            متخصص في العلاج الطبيعي والحجامة، ويقدم برامج علاجية متكاملة تهدف إلى تخفيف آلام العضلات والمفاصل، وتحسين الحركة والمرونة، ودعم التعافي واستعادة النشاط البدني.
-          </p>
-          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-1.5">
-              <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="إكس">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="انستغرام">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="سناب شات">
-                <i class="fa-brands fa-snapchat"></i>
-              </a>
-              <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs" aria-label="فيسبوك">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-            </div>
-            <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20سالم%20إبراهيم%20سمرة" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
-              <i class="fa-brands fa-whatsapp text-sm"></i>
-              <span>احجز الآن</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<!-- ============================================ -->
-<!-- FOOTER: الفوتر الاحترافي                     -->
-<!-- ============================================ -->
-<footer class="w-full bg-#ffffff pt-16 md:pt-20 lg:pt-24 pb-6 overflow-hidden" id="mainFooter">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- ===== القسم العلوي: معلومات + روابط + صورة ===== -->
-    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr_0.8fr] gap-8 lg:gap-12 pb-12 lg:pb-16">
-      
-      <!-- ===== العمود 1: الشعار والمعلومات ===== -->
-      <div class="order-2 lg:order-1">
-        <!-- Logo -->
-        <div class="flex items-center gap-2 mb-4">
-          <img src="../img/logo.png" alt="">
-        </div>
-        
-        <!-- الوصف -->
-        <p class="text-gray-500 leading-relaxed text-sm md:text-base max-w-sm mb-5">
-          نقدم خدمات العلاج الطبيعي والتأهيل المتخصصة لمساعدتك على تخفيف الألم، واستعادة الحركة، والعودة إلى ممارسة حياتك اليومية بصحة ونشاط.
-        </p>
-        
-        <!-- Social Icons -->
-        <div class="flex items-center gap-2.5 flex-wrap">
-          <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm" aria-label="منصة إكس">
-            <i class="fa-brands fa-x-twitter text-lg"></i>
-          </a>
-          <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm" aria-label="انستغرام">
-            <i class="fa-brands fa-instagram text-lg"></i>
-          </a>
-          <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm" aria-label="سناب شات">
-            <i class="fa-brands fa-snapchat text-lg"></i>
-          </a>
-          <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm" aria-label="فيسبوك">
-            <i class="fa-brands fa-facebook-f text-lg"></i>
-          </a>
-          <a href="https://vm.tiktok.com/ZS9MXut5MD3wk-03wyn/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm" aria-label="تيك توك">
-            <i class="fa-brands fa-tiktok text-lg"></i>
-          </a>
-          <a href="https://maps.app.goo.gl/m9bfrJV4Z4KXpiaw5" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm" aria-label="موقعنا على الخريطة">
-            <i class="fa-solid fa-location-dot text-lg"></i>
-          </a>
-        </div>
-      </div>
-      
-      <!-- ===== العمود 2: روابط الفوتر (3 أعمدة) ===== -->
-      <div class="order-3 lg:order-2">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-          <!-- العمود 1: روابط سريعة -->
-          <div>
-            <h4 class="text-base font-bold text-[#252932] mb-4">روابط سريعة</h4>
-            <nav aria-label="روابط سريعة">
-              <ul class="space-y-2.5">
-                <li><a href="../index.html" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">الرئيسية</a></li>
-                <li><a href="../about/" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">من نحن</a></li>
-                <li><a href="../services/" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خدماتنا</a></li>
-                <li><a href="../index.html#whyChooseUs" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">لماذا تختارنا</a></li>
-                <li><a href="#contact" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">اتصل بنا</a></li>
-              </ul>
-            </nav>
-          </div>
-          
-          <!-- العمود 2: خدماتنا -->
-          <div>
-            <h4 class="text-base font-bold text-[#252932] mb-4">خدماتنا</h4>
-            <nav aria-label="خدماتنا">
-              <ul class="space-y-2.5">
-                <li><a href="../services/" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج الطبيعي</a></li>
-                <li><a href="../services/" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">التأهيل بعد الإصابات</a></li>
-                <li><a href="../services/" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">الإصابات الرياضية</a></li>
-                <li><a href="../services/" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج اليدوي</a></li>
-                <li><a href="../services/" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج الطبيعي المنزلي</a></li>
-              </ul>
-            </nav>
-          </div>
-          
-          <!-- العمود 3: الدعم والتواصل -->
-          <div>
-            <h4 class="text-base font-bold text-[#252932] mb-4">الدعم والتواصل</h4>
-            <nav aria-label="الدعم والتواصل">
-              <ul class="space-y-2.5">
-                <li><a href="#contact" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">تواصل معنا</a></li>
-                <li><a href="#contact" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">حجز موعد</a></li>
-                <li><a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">واتساب 0545282472</a></li>
-                <li><a href="https://wa.me/966555766035" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">واتساب 0555766035</a></li>
-                <li><a href="https://maps.app.goo.gl/m9bfrJV4Z4KXpiaw5" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خريطة الموقع</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-      
-      <!-- ===== العمود 3: الصورة الزخرفية ===== -->
-      <div class="order-1 lg:order-3 flex justify-center lg:justify-end items-end">
-        <div class="relative w-[160px] h-[280px] md:h-[340px] lg:h-[420px]">
-         <img src="../img/vertebral-column.png" alt="">
-          <!-- Floating animation -->
-          <style>
-            @keyframes floatShape {
-              0%, 100% { transform: translateY(0px); }
-              50% { transform: translateY(-8px); }
-            }
-            .float-image {
-              animation: floatShape 4s ease-in-out infinite;
-            }
-          </style>
-          <div class="absolute inset-0 float-image pointer-events-none">
-            <!-- الظل الزائد -->
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-3 bg-gray-300/30 rounded-full blur-sm"></div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    
-    <!-- ===== قسم Newsletter ===== -->
-    <div class="bg-[#F8FAFC] rounded-2xl p-6 md:p-8 lg:p-10 mb-8">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
-        <!-- النص -->
-        <div class="text-center lg:text-right">
-          <h3 class="text-xl md:text-2xl font-bold text-[#252932] mb-2">أحدث النصائح الصحية في انتظارك</h3>
-          <p class="text-gray-500 text-sm md:text-base max-w-md">
-            اشترك ليصلك أحدث محتوى العلاج الطبيعي والتأهيل والنصائح الصحية مباشرة.
-          </p>
-        </div>
-        
-        <!-- نموذج الاشتراك -->
-        <form id="newsletterForm" class="w-full lg:w-auto flex-1 max-w-lg" novalidate>
-          <div class="flex flex-col sm:flex-row gap-3 bg-white rounded-full p-1.5 shadow-sm border border-gray-200">
-            <input 
-              type="email" 
-              id="newsletterEmail"
-              placeholder="أدخل بريدك الإلكتروني" 
-              class="flex-1 px-5 py-3 bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm rounded-full min-w-0"
-              required
-              aria-label="البريد الإلكتروني للاشتراك"
-            >
-            <button 
-              type="submit"
-              class="bg-[#1b7276] hover:bg-[#1b7276] active:scale-95 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg whitespace-nowrap text-sm"
-            >
-              اشترك الآن
-            </button>
-          </div>
-          <div id="newsletterMessage" class="text-sm mt-2 text-center sm:text-right"></div>
-        </form>
-      </div>
-    </div>
-    
-    <!-- ===== الخط الفاصل ===== -->
-    <hr class="border-gray-200 my-6">
-    
-    <!-- ===== القسم السفلي ===== -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 pb-4">
-      <!-- Copyright -->
-      <p class="text-gray-400 text-sm text-center sm:text-right">
-        © 2026 جميع الحقوق محفوظة لمركز العلاج الطبيعي.
-      </p>
-      
-      <!-- Google Rating / التقييم -->
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1b7276" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span class="text-sm font-semibold text-[#252932]">4.8</span>
-          <div class="flex text-yellow-400">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-        </div>
-        <span class="text-gray-400 text-xs">أكثر من 12 ألف تقييم</span>
-      </div>
-    </div>
-    
-  </div>
-</footer>
-
-<script>
-  (function() {
-    'use strict';
-    
-    // ===== نموذج Newsletter =====
-    const form = document.getElementById('newsletterForm');
-    const emailInput = document.getElementById('newsletterEmail');
-    const messageDiv = document.getElementById('newsletterMessage');
-    
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const email = emailInput.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
-        if (!email) {
-          messageDiv.innerHTML = '<span class="text-red-500">✕ الرجاء إدخال البريد الإلكتروني</span>';
-          return;
-        }
-        
-        if (!emailRegex.test(email)) {
-          messageDiv.innerHTML = '<span class="text-red-500">✕ الرجاء إدخال بريد إلكتروني صحيح</span>';
-          return;
-        }
-        
-        // محاكاة إرسال
-        messageDiv.innerHTML = '<span class="text-[#1b7276]">✓ جاري الاشتراك...</span>';
-        
-        setTimeout(() => {
-          messageDiv.innerHTML = '<span class="text-green-600">✓ تم الاشتراك بنجاح! شكراً لك.</span>';
-          emailInput.value = '';
-          
-          setTimeout(() => {
-            messageDiv.innerHTML = '';
-          }, 5000);
-        }, 1500);
-      });
+    .card-item:hover {
+      transform: translateY(-4px);
     }
-    
-    // ===== تحسين التفاعل مع الصورة الزخرفية =====
-    const floatImage = document.querySelector('.float-image');
-    if (floatImage) {
-      // إيقاف الحركة إذا كان المستخدم يفضل تقليل الحركة
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        floatImage.style.animation = 'none';
+
+    .card-item .w-14 {
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .card-item:hover .w-14 {
+      transform: scale(1.1) rotate(8deg);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    }
+
+    /* ===== Reveal Animations ===== */
+    .reveal-text {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-text.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-image {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-image.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .card-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .card-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== خطوط فاصلة ===== */
+    @media (max-width: 640px) {
+      .grid .absolute {
+        display: none !important;
       }
     }
-    
-  })();
-</script>
 
-<style>
-  /* ===== CSS إضافي ===== */
-  
-  /* تحسين ظهور الروابط في الفوتر */
-  footer a:focus-visible {
-    outline: 2px solid #1b7276;
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-  
+    /* ===== Reduced Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+
+      .reveal-text,
+      .reveal-image,
+      .card-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .card-item:hover {
+        transform: none !important;
+      }
+
+      img.hover\:scale-\[1\.02\] {
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // ===== Intersection Observer للـ Reveal Animations =====
+      const section = document.getElementById('whyChooseUs');
+
+      if (section) {
+        // التحقق من تفضيل تقليل الحركة
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+          // العناصر المراد تحريكها
+          const revealTexts = section.querySelectorAll('.reveal-text');
+          const revealImage = section.querySelector('.reveal-image');
+          const cardItems = section.querySelectorAll('.card-item');
+
+          // إنشاء Observer
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // تفعيل النصوص
+                revealTexts.forEach((el, index) => {
+                  setTimeout(() => {
+                    el.classList.add('visible');
+                  }, index * 100);
+                });
+
+                // تفعيل الصورة
+                if (revealImage) {
+                  setTimeout(() => {
+                    revealImage.classList.add('visible');
+                  }, 150);
+                }
+
+                // تفعيل البطاقات مع Stagger
+                cardItems.forEach((card, index) => {
+                  setTimeout(() => {
+                    card.classList.add('visible');
+                  }, 250 + (index * 100));
+                });
+
+                // إلغاء المراقبة بعد التفعيل
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+          });
+
+          // بدء المراقبة
+          observer.observe(section);
+
+          // تعيين المظهر الأولي للعناصر
+          // (تم بالفعل عبر CSS)
+        } else {
+          // إذا كان المستخدم يفضل تقليل الحركة، أظهر كل شيء فوراً
+          section.querySelectorAll('.reveal-text, .reveal-image, .card-item').forEach(el => {
+            el.classList.add('visible');
+          });
+        }
+      }
+
+    })();
+  </script>
+
+
+
+  <!-- ============================================ -->
+  <!-- SECTION: فريق العمل - كروت الأطباء المتميزة -->
+  <!-- ============================================ -->
+  <section class="py-20 md:py-28 bg-[#F3F6FC] relative overflow-hidden" id="teamSectionUnique">
+    <!-- خلفية زخرفية -->
+    <div class="absolute inset-0 opacity-40 pointer-events-none">
+      <div class="absolute top-1/4 -right-20 w-96 h-96 bg-[#1b7276]/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14 md:mb-16">
+        <span
+          class="inline-block bg-[#1b7276]/10 text-[#1b7276] px-5 py-2 rounded-full font-bold text-sm mb-3 border border-[#1b7276]/20 shadow-sm">
+          نخبة الأخصائيين
+        </span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] tracking-tight leading-tight">
+          فريقنا الطبي المتخصص
+        </h2>
+        <p class="mt-3 text-base md:text-lg text-gray-600 leading-relaxed">
+          نضم نخبة من أفضل الكوادر والخبرات المتميزة في العلاج الطبيعي والتأهيل لمساعدتك على استعادة صحتك ونشاطك.
+        </p>
+      </div>
+
+      <!-- Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+        <!-- Card 1 -->
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
+          <div class="relative h-72 overflow-hidden bg-gray-100">
+            <img src="../img/team-1.jpeg" alt="د. محمد عبدالعاطي"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
+            </div>
+            <span
+              class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              أخصائي معتمد
+            </span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-[#252932]">د. محمد عبدالعاطي</h3>
+            <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي إصابات الملاعب والتأهيل الرياضي</p>
+            <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
+              متخصص في علاج وتأهيل إصابات الملاعب والإصابات الرياضية، ويقدم برامج تأهيلية متكاملة تساعد الرياضيين على
+              استعادة القوة والحركة والمرونة، والعودة الآمنة لممارسة النشاط الرياضي بأفضل مستوى.
+            </p>
+            <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="إكس">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="انستغرام">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="سناب شات">
+                  <i class="fa-brands fa-snapchat"></i>
+                </a>
+                <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="فيسبوك">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20محمد%20عبدالعاطي"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>احجز الآن</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
+          <div class="relative h-72 overflow-hidden bg-gray-100">
+            <img src="../img/team-2.jpeg" alt="د. فهد حسين شراحيلي"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
+            </div>
+            <span
+              class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              أخصائي معتمد
+            </span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-[#252932]">د. فهد حسين شراحيلي</h3>
+            <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي علاج طبيعي</p>
+            <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
+              متخصص في تقييم وعلاج مشكلات الجهاز العضلي والحركي، ويقدم برامج علاج طبيعي وتأهيل مخصصة تساعد على تخفيف
+              الألم، وتحسين الحركة والمرونة، واستعادة الوظائف الحركية بكفاءة وأمان.
+            </p>
+            <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="إكس">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="انستغرام">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="سناب شات">
+                  <i class="fa-brands fa-snapchat"></i>
+                </a>
+                <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="فيسبوك">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20فهد%20حسين%20شراحيلي"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>احجز الآن</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
+          <div class="relative h-72 overflow-hidden bg-gray-100">
+            <img src="../img/team-4.jpeg" alt="د. زينب محمد الامين"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
+            </div>
+            <span
+              class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              أخصائية معتمدة
+            </span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-[#252932]">د. زينب محمد الامين</h3>
+            <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائية حجامة</p>
+            <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
+              متخصصة في تقديم جلسات الحجامة باهتمام واحترافية، مع مراعاة احتياجات كل حالة وتطبيق أعلى معايير النظافة
+              والسلامة، بهدف دعم الشعور بالراحة وتحسين الصحة العامة.
+            </p>
+            <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="إكس">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="انستغرام">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="سناب شات">
+                  <i class="fa-brands fa-snapchat"></i>
+                </a>
+                <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="فيسبوك">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20زينب%20محمد%20الامين"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>احجز الآن</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
+          <div class="relative h-72 overflow-hidden bg-gray-100">
+            <img src="../img/team-3.jfif" alt="د. سالم إبراهيم سمرة"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
+            </div>
+            <span
+              class="absolute bottom-3 right-3 bg-[#1b7276] text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+              أخصائي معتمد
+            </span>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-[#252932]">د. سالم إبراهيم سمرة</h3>
+            <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي علاج طبيعي وحجامة</p>
+            <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
+              متخصص في العلاج الطبيعي والحجامة، ويقدم برامج علاجية متكاملة تهدف إلى تخفيف آلام العضلات والمفاصل، وتحسين
+              الحركة والمرونة، ودعم التعافي واستعادة النشاط البدني.
+            </p>
+            <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5">
+                <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="إكس">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="انستغرام">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="سناب شات">
+                  <i class="fa-brands fa-snapchat"></i>
+                </a>
+                <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer"
+                  class="w-8 h-8 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1b7276] hover:text-white flex items-center justify-center transition-colors text-xs"
+                  aria-label="فيسبوك">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20سالم%20إبراهيم%20سمرة"
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>احجز الآن</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- ============================================ -->
+  <!-- FOOTER: الفوتر الاحترافي                     -->
+  <!-- ============================================ -->
+  <footer class="w-full bg-#ffffff pt-16 md:pt-20 lg:pt-24 pb-6 overflow-hidden" id="mainFooter">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- ===== القسم العلوي: معلومات + روابط + صورة ===== -->
+      <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr_0.8fr] gap-8 lg:gap-12 pb-12 lg:pb-16">
+
+        <!-- ===== العمود 1: الشعار والمعلومات ===== -->
+        <div class="order-2 lg:order-1">
+          <!-- Logo -->
+          <div class="flex items-center gap-2 mb-4">
+            <img src="../img/logo.png" alt="">
+          </div>
+
+          <!-- الوصف -->
+          <p class="text-gray-500 leading-relaxed text-sm md:text-base max-w-sm mb-5">
+            نقدم خدمات العلاج الطبيعي والتأهيل المتخصصة لمساعدتك على تخفيف الألم، واستعادة الحركة، والعودة إلى ممارسة
+            حياتك اليومية بصحة ونشاط.
+          </p>
+
+          <!-- Social Icons -->
+          <div class="flex items-center gap-2.5 flex-wrap">
+            <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
+              aria-label="منصة إكس">
+              <i class="fa-brands fa-x-twitter text-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
+              aria-label="انستغرام">
+              <i class="fa-brands fa-instagram text-lg"></i>
+            </a>
+            <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
+              aria-label="سناب شات">
+              <i class="fa-brands fa-snapchat text-lg"></i>
+            </a>
+            <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
+              aria-label="فيسبوك">
+              <i class="fa-brands fa-facebook-f text-lg"></i>
+            </a>
+            <a href="https://vm.tiktok.com/ZS9MXut5MD3wk-03wyn/" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
+              aria-label="تيك توك">
+              <i class="fa-brands fa-tiktok text-lg"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/m9bfrJV4Z4KXpiaw5" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#1b7276] hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
+              aria-label="موقعنا على الخريطة">
+              <i class="fa-solid fa-location-dot text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ===== العمود 2: روابط الفوتر (3 أعمدة) ===== -->
+        <div class="order-3 lg:order-2">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+            <!-- العمود 1: روابط سريعة -->
+            <div>
+              <h4 class="text-base font-bold text-[#252932] mb-4">روابط سريعة</h4>
+              <nav aria-label="روابط سريعة">
+                <ul class="space-y-2.5">
+                  <li><a href="../index.html"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">الرئيسية</a>
+                  </li>
+                  <li><a href="../about/"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">من
+                      نحن</a></li>
+                  <li><a href="../services/"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خدماتنا</a>
+                  </li>
+                  <li><a href="../index.html#whyChooseUs"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">لماذا
+                      تختارنا</a></li>
+                  <li><a href="#contact"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">اتصل
+                      بنا</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- العمود 2: خدماتنا -->
+            <div>
+              <h4 class="text-base font-bold text-[#252932] mb-4">خدماتنا</h4>
+              <nav aria-label="خدماتنا">
+                <ul class="space-y-2.5">
+                  <li><a href="../services/"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج
+                      الطبيعي</a></li>
+                  <li><a href="../services/"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">التأهيل
+                      بعد الإصابات</a></li>
+                  <li><a href="../services/"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">الإصابات
+                      الرياضية</a></li>
+                  <li><a href="../services/"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج
+                      اليدوي</a></li>
+                  <li><a href="../services/"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج
+                      الطبيعي المنزلي</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- العمود 3: الدعم والتواصل -->
+            <div>
+              <h4 class="text-base font-bold text-[#252932] mb-4">الدعم والتواصل</h4>
+              <nav aria-label="الدعم والتواصل">
+                <ul class="space-y-2.5">
+                  <li><a href="#contact"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">تواصل
+                      معنا</a></li>
+                  <li><a href="#contact"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">حجز
+                      موعد</a></li>
+                  <li><a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">واتساب
+                      0545282472</a></li>
+                  <li><a href="https://wa.me/966555766035" target="_blank" rel="noopener noreferrer"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">واتساب
+                      0555766035</a></li>
+                  <li><a href="https://maps.app.goo.gl/m9bfrJV4Z4KXpiaw5" target="_blank" rel="noopener noreferrer"
+                      class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خريطة
+                      الموقع</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== العمود 3: الصورة الزخرفية ===== -->
+        <div class="order-1 lg:order-3 flex justify-center lg:justify-end items-end">
+          <div class="relative w-[160px] h-[280px] md:h-[340px] lg:h-[420px]">
+            <img src="../img/vertebral-column.png" alt="">
+            <!-- Floating animation -->
+            <style>
+              @keyframes floatShape {
+
+                0%,
+                100% {
+                  transform: translateY(0px);
+                }
+
+                50% {
+                  transform: translateY(-8px);
+                }
+              }
+
+              .float-image {
+                animation: floatShape 4s ease-in-out infinite;
+              }
+            </style>
+            <div class="absolute inset-0 float-image pointer-events-none">
+              <!-- الظل الزائد -->
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-3 bg-gray-300/30 rounded-full blur-sm">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== قسم Newsletter ===== -->
+      <div class="bg-[#F8FAFC] rounded-2xl p-6 md:p-8 lg:p-10 mb-8">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
+          <!-- النص -->
+          <div class="text-center lg:text-right">
+            <h3 class="text-xl md:text-2xl font-bold text-[#252932] mb-2">أحدث النصائح الصحية في انتظارك</h3>
+            <p class="text-gray-500 text-sm md:text-base max-w-md">
+              اشترك ليصلك أحدث محتوى العلاج الطبيعي والتأهيل والنصائح الصحية مباشرة.
+            </p>
+          </div>
+
+          <!-- نموذج الاشتراك -->
+          <form id="newsletterForm" class="w-full lg:w-auto flex-1 max-w-lg" novalidate>
+            <div class="flex flex-col sm:flex-row gap-3 bg-white rounded-full p-1.5 shadow-sm border border-gray-200">
+              <input type="email" id="newsletterEmail" placeholder="أدخل بريدك الإلكتروني"
+                class="flex-1 px-5 py-3 bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm rounded-full min-w-0"
+                required aria-label="البريد الإلكتروني للاشتراك">
+              <button type="submit"
+                class="bg-[#1b7276] hover:bg-[#1b7276] active:scale-95 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg whitespace-nowrap text-sm">
+                اشترك الآن
+              </button>
+            </div>
+            <div id="newsletterMessage" class="text-sm mt-2 text-center sm:text-right"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ===== الخط الفاصل ===== -->
+      <hr class="border-gray-200 my-6">
+
+      <!-- ===== القسم السفلي ===== -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 pb-4">
+        <!-- Copyright -->
+        <p class="text-gray-400 text-sm text-center sm:text-right">
+          © 2026 جميع الحقوق محفوظة لمركز العلاج الطبيعي.
+        </p>
+
+        <!-- Google Rating / التقييم -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="#1b7276" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span class="text-sm font-semibold text-[#252932]">4.8</span>
+            <div class="flex text-yellow-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+          <span class="text-gray-400 text-xs">أكثر من 12 ألف تقييم</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // ===== نموذج Newsletter =====
+      const form = document.getElementById('newsletterForm');
+      const emailInput = document.getElementById('newsletterEmail');
+      const messageDiv = document.getElementById('newsletterMessage');
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const email = emailInput.value.trim();
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!email) {
+            messageDiv.innerHTML = '<span class="text-red-500">✕ الرجاء إدخال البريد الإلكتروني</span>';
+            return;
+          }
+
+          if (!emailRegex.test(email)) {
+            messageDiv.innerHTML = '<span class="text-red-500">✕ الرجاء إدخال بريد إلكتروني صحيح</span>';
+            return;
+          }
+
+          // محاكاة إرسال
+          messageDiv.innerHTML = '<span class="text-[#1b7276]">✓ جاري الاشتراك...</span>';
+
+          setTimeout(() => {
+            messageDiv.innerHTML = '<span class="text-green-600">✓ تم الاشتراك بنجاح! شكراً لك.</span>';
+            emailInput.value = '';
+
+            setTimeout(() => {
+              messageDiv.innerHTML = '';
+            }, 5000);
+          }, 1500);
+        });
+      }
+
+      // ===== تحسين التفاعل مع الصورة الزخرفية =====
+      const floatImage = document.querySelector('.float-image');
+      if (floatImage) {
+        // إيقاف الحركة إذا كان المستخدم يفضل تقليل الحركة
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          floatImage.style.animation = 'none';
+        }
+      }
+
+    })();
+  </script>
+
+  <style>
+    /* ===== CSS إضافي ===== */
+
+    /* تحسين ظهور الروابط في الفوتر */
+    footer a:focus-visible {
+      outline: 2px solid #1b7276;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* تحسين مظهر الحقول */
+    input::placeholder {
+      color: #9CA3AF;
+    }
+
+    /* منع انزلاق الصفحة عند الضغط على الفوتر في الموبايل */
+    footer {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ===== Reduced Motion ===== */
+    @media (prefers-reduced-motion: reduce) {
+      .float-image {
+        animation: none !important;
+      }
+
+      footer a,
+      footer button,
+      footer .transition-all {
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ===== Responsive Fine-tuning ===== */
+    @media (max-width: 640px) {
+      .bg-white.rounded-full {
+        border-radius: 16px !important;
+      }
+
+      .bg-white.rounded-full button {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <!-- ============================================ -->
+  <!-- FLOATING WIDGET: التواصل السريع والسوشيال ميديا -->
+  <!-- ============================================ -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 group dir-rtl" id="floatingWidgetContainer">
+
+    <!-- القائمة المنسدلة التفاعلية لشيكة التواصل والسوشيال ميديا -->
+    <div id="contactWidgetMenu"
+      class="hidden flex-col gap-2.5 bg-white/95 backdrop-blur-xl p-4 rounded-3xl shadow-2xl border border-gray-100/90 text-right min-w-[280px] transition-all duration-300 scale-95 opacity-0 origin-bottom-right">
+
+      <div class="flex items-center justify-between border-b border-gray-100 pb-2 mb-0.5 px-1">
+        <span class="text-xs font-extrabold text-[#252932] flex items-center gap-1.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#1b7276] animate-pulse"></span>
+          تواصل معنا ومتابعتنا
+        </span>
+        <span class="text-[10px] bg-blue-50 text-[#1b7276] font-bold px-2.5 py-0.5 rounded-full">خدمة 24/7</span>
+      </div>
+
+      <!-- أزرار الواتساب والاتصال السريع -->
+      <a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-between p-2.5 rounded-2xl bg-emerald-50 text-emerald-800 hover:bg-emerald-600 hover:text-white transition-all duration-300 font-bold text-xs shadow-sm hover:shadow-md group/item">
+        <span class="flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg text-emerald-600 group-hover/item:text-white transition-colors"></i>
+          <span>0545282472</span>
+        </span>
+        <span
+          class="text-[10px] bg-emerald-600 text-white group-hover/item:bg-white group-hover/item:text-emerald-700 px-2 py-0.5 rounded-lg transition-colors font-bold">واتساب
+          رئيسي</span>
+      </a>
+
+      <a href="tel:0545282472"
+        class="flex items-center justify-between p-2.5 rounded-2xl bg-teal-50 text-teal-800 hover:bg-[#1b7276] hover:text-white transition-all duration-300 font-bold text-xs shadow-sm hover:shadow-md group/item">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-phone-volume text-sm text-[#1b7276] group-hover/item:text-white transition-colors"></i>
+          <span>0545282472</span>
+        </span>
+        <span
+          class="text-[10px] bg-[#1b7276] text-white group-hover/item:bg-white group-hover/item:text-[#1b7276] px-2 py-0.5 rounded-lg transition-colors font-bold">اتصال
+          مباشر</span>
+      </a>
+
+      <a href="https://wa.me/966555766035" target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-between p-2.5 rounded-2xl bg-emerald-50/70 text-emerald-800 hover:bg-emerald-600 hover:text-white transition-all duration-300 font-bold text-xs shadow-sm hover:shadow-md group/item">
+        <span class="flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg text-emerald-600 group-hover/item:text-white transition-colors"></i>
+          <span>0555766035</span>
+        </span>
+        <span
+          class="text-[10px] bg-emerald-700 text-white group-hover/item:bg-white group-hover/item:text-emerald-700 px-2 py-0.5 rounded-lg transition-colors font-bold">واتساب
+          فرعي</span>
+      </a>
+
+      <!-- قسم شبكات التواصل الاجتماعي -->
+      <div class="pt-2.5 border-t border-gray-100 mt-1">
+        <div class="text-[11px] font-extrabold text-gray-500 mb-2 px-1">تابعنا على شبكات التواصل:</div>
+        <div class="grid grid-cols-5 gap-1.5 text-center">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/hona_altfaol/" target="_blank" rel="noopener noreferrer" title="إنستغرام"
+            class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-lg hover:scale-110 transition-transform shadow-md">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <!-- TikTok -->
+          <a href="https://vm.tiktok.com/ZS9MXut5MD3wk-03wyn/" target="_blank" rel="noopener noreferrer" title="تيك توك"
+            class="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center text-base hover:scale-110 transition-transform shadow-md border border-gray-800">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+          <!-- Snapchat -->
+          <a href="https://www.snapchat.com/add/hona_altfaol?share_id=kVGdvJaI2Oo&locale=ar-EG" target="_blank"
+            rel="noopener noreferrer" title="سناب شات"
+            class="w-10 h-10 rounded-xl bg-yellow-400 text-black flex items-center justify-center text-lg hover:scale-110 transition-transform shadow-md">
+            <i class="fa-brands fa-snapchat"></i>
+          </a>
+
+          <!-- X (Twitter) -->
+          <a href="https://x.com/hona_altfaol" target="_blank" rel="noopener noreferrer" title="إكس (تويتر)"
+            class="w-10 h-10 rounded-xl bg-gray-900 text-white flex items-center justify-center text-base hover:scale-110 transition-transform shadow-md">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/hona.altfaol/" target="_blank" rel="noopener noreferrer" title="فيسبوك"
+            class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-base hover:scale-110 transition-transform shadow-md">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- الأزرار العائمة الخارجية السريعة -->
+    <div class="flex items-center gap-2.5">
+
+      <!-- زر الاتصال المباشر السريع -->
+      <a href="tel:0545282472"
+        class="relative w-12 h-12 bg-[#1b7276] hover:bg-[#155a5d] text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group/call"
+        title="اتصال مباشر">
+        <i class="fa-solid fa-phone text-lg transition-transform group-hover/call:rotate-12"></i>
+        <!-- Tooltip -->
+        <span
+          class="absolute right-14 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs font-bold px-2.5 py-1 rounded-lg opacity-0 pointer-events-none group-hover/call:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
+          اتصال تلفوني
+        </span>
+      </a>
+
+      <!-- زر الواتساب المباشر السريع -->
+      <a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer"
+        class="relative w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group/wa"
+        title="واتساب مباشر">
+        <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400"></span>
+        </span>
+        <i class="fa-brands fa-whatsapp text-2xl transition-transform group-hover/wa:scale-110"></i>
+        <!-- Tooltip -->
+        <span
+          class="absolute right-14 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs font-bold px-2.5 py-1 rounded-lg opacity-0 pointer-events-none group-hover/wa:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
+          محادثة واتساب
+        </span>
+      </a>
+
+      <!-- زر القائمة الشاملة (سوشيال ميديا + خدمات التواصل) -->
+      <button id="floatingWidgetToggleBtn" onclick="toggleFloatingWidget()"
+        class="relative w-14 h-14 bg-gradient-to-r from-[#1b7276] to-teal-600 hover:from-teal-600 hover:to-[#1b7276] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none"
+        aria-label="تواصل معنا وسوشيال ميديا">
+        <i id="floatingWidgetIcon" class="fa-solid fa-headset text-2xl transition-transform duration-300"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleFloatingWidget() {
+      const menu = document.getElementById('contactWidgetMenu');
+      const icon = document.getElementById('floatingWidgetIcon');
+      if (!menu) return;
+
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        setTimeout(() => {
+          menu.classList.remove('scale-95', 'opacity-0');
+          menu.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        if (icon) icon.className = "fa-solid fa-xmark text-2xl transition-transform duration-300 rotate-90";
+      } else {
+        menu.classList.remove('scale-100', 'opacity-100');
+        menu.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+          menu.classList.remove('flex');
+          menu.classList.add('hidden');
+        }, 200);
+        if (icon) icon.className = "fa-solid fa-headset text-2xl transition-transform duration-300";
+      }
+    }
+
+  </script>
+  </style>
+
   /* تحسين مظهر الحقول */
   input::placeholder {
-    color: #9CA3AF;
+  color: #9CA3AF;
   }
-  
+
   /* منع انزلاق الصفحة عند الضغط على الفوتر في الموبايل */
   footer {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   }
-  
+
   /* ===== Reduced Motion ===== */
   @media (prefers-reduced-motion: reduce) {
-    .float-image {
-      animation: none !important;
-    }
-    footer a,
-    footer button,
-    footer .transition-all {
-      transition-duration: 0.01ms !important;
-    }
+  .float-image {
+  animation: none !important;
   }
-  
+  footer a,
+  footer button,
+  footer .transition-all {
+  transition-duration: 0.01ms !important;
+  }
+  }
+
   /* ===== Responsive Fine-tuning ===== */
   @media (max-width: 640px) {
-    .bg-white.rounded-full {
-      border-radius: 16px !important;
-    }
-    .bg-white.rounded-full button {
-      width: 100%;
-    }
+  .bg-white.rounded-full {
+  border-radius: 16px !important;
   }
-</style>
+  .bg-white.rounded-full button {
+  width: 100%;
+  }
+  }
 
-<!-- Floating Contact / WhatsApp Widget -->
-<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 group">
-  <div id="contactWidgetMenu" class="hidden flex-col gap-2 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-2xl border border-gray-100 text-right min-w-[240px] transition-all duration-300">
-    <div class="text-xs font-bold text-gray-400 mb-1 px-1">تواصل معنا الآن:</div>
-    <a href="https://wa.me/966545282472" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-all font-semibold text-sm">
-      <span class="flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        0545282472
-      </span>
-      <span class="text-xs bg-emerald-600 text-white px-2 py-0.5 rounded-md">واتساب / اتصال</span>
-    </a>
-    <a href="https://wa.me/966555766035" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-teal-50 text-teal-700 hover:bg-teal-100 transition-all font-semibold text-sm">
-      <span class="flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        0555766035
-      </span>
-      <span class="text-xs bg-teal-600 text-white px-2 py-0.5 rounded-md">واتساب / اتصال</span>
-    </a>
-  </div>
-  
-  <button onclick="document.getElementById('contactWidgetMenu').classList.toggle('hidden'); document.getElementById('contactWidgetMenu').classList.toggle('flex');" class="relative w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none" aria-label="تواصل معنا عبر الواتساب والاتصال">
-    <span class="absolute -top-1 -right-1 flex h-4 w-4">
-      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-      <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-400"></span>
-    </span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  </button>
-</div>
 </body>
+
 </html>
