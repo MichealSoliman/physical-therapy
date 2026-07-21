@@ -1045,7 +1045,6 @@
 </script>
 
 
-
 <!-- ============================================ -->
 <!-- SECTION: من نحن (About Us)                   -->
 <!-- ============================================ -->
@@ -2093,6 +2092,496 @@
     window.addEventListener('beforeunload', function() {
       if (imageInterval) clearInterval(imageInterval);
     });
+    
+  })();
+</script>
+
+
+
+
+
+<!-- ============================================ -->
+<!-- SECTION: حدد منطقة الألم - نسخة نهائية      -->
+<!-- ============================================ -->
+<section class="w-full bg-gradient-to-b from-[#F5FBFB] to-white py-20 lg:py-28 overflow-hidden" id="painAreaSection">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- ===== العنوان ===== -->
+    <div class="text-center mb-10 md:mb-14">
+      <span class="inline-flex items-center gap-2 text-[#0F8F8F] font-semibold text-sm md:text-base tracking-wider mb-3 bg-[#0F8F8F]/10 px-4 py-1.5 rounded-full border border-[#0F8F8F]/20">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4l3 3"/>
+        </svg>
+        حدد منطقة الألم
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#102A43] leading-tight">
+        أين تشعر بالألم؟ <br class="hidden sm:block">
+        <span class="text-[#0F8F8F]">دعنا نساعدك</span>
+      </h2>
+      <p class="text-gray-500 mt-3 max-w-2xl mx-auto text-base md:text-lg">
+        حدد المنطقة التي تشعر فيها بالألم، واكتشف معلومات ونصائح علاجية مناسبة من فريقنا المتخصص.
+      </p>
+    </div>
+
+    <!-- ===== Quick Selection Cards ===== -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:mb-14" id="quickCardsContainer"></div>
+
+    <!-- ===== الجزء التفاعلي الرئيسي ===== -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      
+      <!-- ===== بطاقة المعلومات ===== -->
+      <div class="order-2 lg:order-1" id="infoCard">
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg shadow-[#0F8F8F]/5 border border-gray-100/50">
+          <div id="infoContent" aria-live="polite"></div>
+        </div>
+      </div>
+      
+      <!-- ===== جسم الإنسان التفاعلي ===== -->
+      <div class="order-1 lg:order-2">
+        <!-- Toggle -->
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <button id="viewFrontBtn" class="px-6 py-2 rounded-full text-sm font-semibold bg-[#0F8F8F] text-white shadow-md shadow-[#0F8F8F]/20 transition-all duration-300 hover:scale-105">أمامي</button>
+          <button id="viewBackBtn" class="px-6 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-500 hover:bg-gray-200 transition-all duration-300">خلفي</button>
+        </div>
+        
+        <div class="relative flex justify-center">
+          <div id="bodyContainer" class="relative w-full max-w-md mx-auto"></div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- ===== زر عرض جميع المناطق ===== -->
+    <div class="text-center mt-12">
+      <a href="#" class="inline-flex items-center gap-3 bg-gradient-to-r from-[#0F8F8F] to-[#23B5B5] text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-[#0F8F8F]/25 hover:shadow-[#0F8F8F]/40 hover:-translate-y-1 transition-all duration-300 group">
+        <span>عرض جميع النصائح والمناطق</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  .quick-card {
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 16px 14px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    text-align: center;
+  }
+  .quick-card:hover {
+    transform: translateY(-3px);
+    border-color: #0F8F8F;
+    box-shadow: 0 8px 25px rgba(15, 143, 143, 0.1);
+  }
+  .quick-card.active {
+    border-color: #0F8F8F;
+    background: linear-gradient(135deg, #F0F9F9, #E6F5F5);
+    box-shadow: 0 8px 30px rgba(15, 143, 143, 0.15);
+    transform: translateY(-4px);
+  }
+  .quick-card .icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #F0F9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    color: #0F8F8F;
+    transition: all 0.4s ease;
+  }
+  .quick-card.active .icon-wrapper {
+    background: #0F8F8F;
+    color: white;
+    box-shadow: 0 4px 15px rgba(15, 143, 143, 0.3);
+  }
+  .quick-card .quick-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #102A43;
+    margin-bottom: 2px;
+  }
+  .quick-card .quick-sub {
+    font-size: 0.65rem;
+    color: #9CA3AF;
+    line-height: 1.3;
+  }
+  
+  .body-part {
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .body-part:hover {
+    fill: #0F8F8F !important;
+    opacity: 0.5 !important;
+  }
+  .body-part.active {
+    fill: #0F8F8F !important;
+    opacity: 0.7 !important;
+    filter: drop-shadow(0 0 15px rgba(15, 143, 143, 0.4));
+  }
+  .body-part.pulse {
+    animation: pulseGlow 1s ease-out;
+  }
+  @keyframes pulseGlow {
+    0% { filter: drop-shadow(0 0 0 rgba(15, 143, 143, 0)); }
+    50% { filter: drop-shadow(0 0 30px rgba(15, 143, 143, 0.6)); }
+    100% { filter: drop-shadow(0 0 15px rgba(15, 143, 143, 0.3)); }
+  }
+  
+  .info-content-item {
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .info-content-item.exit {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  .info-content-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .condition-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #F0F9F9;
+    color: #0F8F8F;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid rgba(15, 143, 143, 0.15);
+  }
+  
+  .article-card {
+    display: flex;
+    gap: 14px;
+    padding: 14px;
+    background: #F8FCFC;
+    border-radius: 14px;
+    border: 1px solid #E5E7EB;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .article-card:hover {
+    border-color: #0F8F8F;
+    box-shadow: 0 4px 20px rgba(15, 143, 143, 0.08);
+  }
+  .article-card .article-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .article-card .article-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .article-card:hover .article-img img {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .quick-card { padding: 12px 10px; }
+    .quick-card .icon-wrapper { width: 36px; height: 36px; }
+    .quick-card .quick-title { font-size: 0.75rem; }
+    .quick-card .quick-sub { font-size: 0.6rem; }
+    .article-card .article-img { width: 60px; height: 60px; }
+  }
+  @media (max-width: 480px) {
+    .quick-card { padding: 10px 8px; border-radius: 12px; }
+    .quick-card .icon-wrapper { width: 32px; height: 32px; border-radius: 8px; }
+    .quick-card .icon-wrapper svg { width: 16px; height: 16px; }
+    .quick-card .quick-title { font-size: 0.7rem; }
+    .article-card .article-img { width: 50px; height: 50px; }
+    .article-card { padding: 10px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .quick-card, .body-part, .info-content-item {
+      transition-duration: 0.01ms !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    'use strict';
+    
+    // ===== بيانات المناطق =====
+    const painAreas = {
+      back: {
+        id: 'back',
+        title: 'الظهر والعمود الفقري',
+        shortDescription: 'آلام الظهر – الانزلاق الغضروفي – عرق النسا',
+        description: 'نعالج مشكلات وآلام الظهر وأسفل الظهر ونقدم برامج تأهيلية مخصصة لتحسين الحركة وتخفيف الألم باستخدام أحدث التقنيات العلاجية.',
+        conditions: ['آلام أسفل الظهر', 'الانزلاق الغضروفي', 'عرق النسا', 'الشد العضلي', 'مشكلات الفقرات'],
+        article: {
+          category: 'نصائح علاجية',
+          title: 'الانزلاق الغضروفي: الأسباب والأعراض ودور العلاج الطبيعي',
+          image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&q=80',
+          link: '#'
+        },
+        link: '#',
+        icon: '<path d="M19 14v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6"/><path d="M3 14h18"/><path d="M12 14v8"/><path d="M8 6V2"/><path d="M16 6V2"/><rect x="6" y="6" width="12" height="8" rx="2"/>'
+      },
+      knee: {
+        id: 'knee',
+        title: 'الركبة',
+        shortDescription: 'خشونة الركبة – إصابات الأربطة – آلام المفاصل',
+        description: 'برامج علاج وتأهيل متخصصة لمشكلات الركبة تشمل العلاج الطبيعي، التمارين العلاجية، وتقنيات تخفيف الألم لاستعادة الحركة والقوة.',
+        conditions: ['خشونة الركبة', 'إصابات الأربطة', 'آلام المفاصل', 'التأهيل بعد الجراحة', 'تمزق الغضروف'],
+        article: {
+          category: 'صحة المفاصل',
+          title: 'أهم أسباب آلام الركبة وطرق العلاج والتأهيل',
+          image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&q=80',
+          link: '#'
+        },
+        link: '#',
+        icon: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'
+      },
+      neck: {
+        id: 'neck',
+        title: 'الرقبة',
+        shortDescription: 'تيبس الرقبة – آلام الفقرات العنقية – الشد العضلي',
+        description: 'نقدم علاجاً متخصصاً لآلام الرقبة وتيبسها باستخدام تقنيات العلاج اليدوي والتمارين العلاجية لتحسين المرونة وتخفيف الألم.',
+        conditions: ['تيبس الرقبة', 'آلام الفقرات العنقية', 'الشد العضلي', 'الديسك العنقي', 'الانزلاق الغضروفي العنقي'],
+        article: {
+          category: 'علاج طبيعي',
+          title: 'طرق فعالة لعلاج آلام الرقبة المزمنة',
+          image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&q=80',
+          link: '#'
+        },
+        link: '#',
+        icon: '<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>'
+      },
+      shoulder: {
+        id: 'shoulder',
+        title: 'الكتف',
+        shortDescription: 'آلام الكتف – التهاب الأوتار – محدودية الحركة',
+        description: 'برامج علاجية متخصصة لآلام الكتف والتهابات الأوتار تساعد على استعادة نطاق الحركة وتخفيف الألم باستخدام أحدث التقنيات.',
+        conditions: ['آلام الكتف', 'التهاب الأوتار', 'محدودية الحركة', 'تمزق الكفة المدورة', 'التهاب الجراب'],
+        article: {
+          category: 'صحة العظام',
+          title: 'آلام الكتف: الأسباب والعلاج الطبيعي الفعال',
+          image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=200&q=80',
+          link: '#'
+        },
+        link: '#',
+        icon: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'
+      }
+    };
+    
+    let currentArea = 'back';
+    let currentView = 'front';
+    let isTransitioning = false;
+    
+    const quickContainer = document.getElementById('quickCardsContainer');
+    const infoContent = document.getElementById('infoContent');
+    const bodyContainer = document.getElementById('bodyContainer');
+    const viewFrontBtn = document.getElementById('viewFrontBtn');
+    const viewBackBtn = document.getElementById('viewBackBtn');
+    
+    // ===== SVG Body =====
+    function getBodySVG(view) {
+      if (view === 'front') {
+        return `<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <ellipse cx="200" cy="50" rx="40" ry="50" class="body-part" data-area="head" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="180" y="95" width="40" height="30" rx="8" class="body-part" data-area="neck" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M200 125 L260 110 L280 150 L220 160 Z" class="body-part" data-area="shoulder-right" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M200 125 L140 110 L120 150 L180 160 Z" class="body-part" data-area="shoulder-left" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="165" y="150" width="70" height="80" rx="15" class="body-part" data-area="chest" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="165" y="225" width="70" height="80" rx="10" class="body-part" data-area="abdomen" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="155" y="300" width="90" height="50" rx="12" class="body-part" data-area="pelvis" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M275 155 L310 180 L300 260 L280 250 L290 180 Z" class="body-part" data-area="arm-right" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M125 155 L90 180 L100 260 L120 250 L110 180 Z" class="body-part" data-area="arm-left" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M230 340 L250 430 L230 490 L210 490 L215 430 Z" class="body-part" data-area="leg-right" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M170 340 L150 430 L170 490 L190 490 L185 430 Z" class="body-part" data-area="leg-left" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <circle cx="235" cy="430" r="15" class="body-part" data-area="knee-right" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <circle cx="165" cy="430" r="15" class="body-part" data-area="knee-left" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+        </svg>`;
+      } else {
+        return `<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <ellipse cx="200" cy="50" rx="40" ry="50" class="body-part" data-area="head-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="180" y="95" width="40" height="30" rx="8" class="body-part" data-area="neck-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="165" y="140" width="70" height="100" rx="15" class="body-part" data-area="back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="165" y="235" width="70" height="70" rx="10" class="body-part" data-area="lower-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <rect x="155" y="300" width="90" height="50" rx="12" class="body-part" data-area="pelvis-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M275 155 L310 180 L300 260 L280 250 L290 180 Z" class="body-part" data-area="arm-right-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M125 155 L90 180 L100 260 L120 250 L110 180 Z" class="body-part" data-area="arm-left-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M230 340 L250 430 L230 490 L210 490 L215 430 Z" class="body-part" data-area="leg-right-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+          <path d="M170 340 L150 430 L170 490 L190 490 L185 430 Z" class="body-part" data-area="leg-left-back" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+        </svg>`;
+      }
+    }
+    
+    // ===== بناء Quick Cards =====
+    function buildQuickCards() {
+      quickContainer.innerHTML = '';
+      Object.values(painAreas).forEach((area) => {
+        const card = document.createElement('div');
+        card.className = `quick-card ${area.id === currentArea ? 'active' : ''}`;
+        card.dataset.area = area.id;
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `اختيار منطقة ${area.title}`);
+        card.innerHTML = `
+          <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${area.icon}</svg></div>
+          <div class="quick-title">${area.title}</div>
+          <div class="quick-sub">${area.shortDescription.split(' – ').slice(0, 2).join(' – ')}</div>
+        `;
+        card.addEventListener('click', () => selectArea(area.id));
+        quickContainer.appendChild(card);
+      });
+    }
+    
+    // ===== بناء الجسم =====
+    function buildBody() {
+      bodyContainer.innerHTML = getBodySVG(currentView);
+      document.querySelectorAll('.body-part').forEach(part => {
+        part.addEventListener('click', function() {
+          const area = this.dataset.area;
+          let target = 'back';
+          if (area.includes('knee') || area.includes('leg')) target = 'knee';
+          else if (area.includes('neck') || area.includes('head')) target = 'neck';
+          else if (area.includes('shoulder') || area.includes('arm')) target = 'shoulder';
+          if (target !== currentArea) selectArea(target);
+        });
+        part.addEventListener('mouseenter', function() {
+          if (!this.classList.contains('active')) { this.style.fill = '#0F8F8F'; this.style.opacity = '0.4'; }
+        });
+        part.addEventListener('mouseleave', function() {
+          if (!this.classList.contains('active')) { this.style.fill = '#E5E7EB'; this.style.opacity = '1'; }
+        });
+        part.setAttribute('tabindex', '0');
+        part.setAttribute('role', 'button');
+      });
+      updateBodyActive();
+    }
+    
+    // ===== تحديث الجسم النشط =====
+    function updateBodyActive() {
+      const map = {
+        'back': ['back','lower-back','pelvis-back','head-back','neck-back','pelvis','chest','abdomen'],
+        'knee': ['knee-right','knee-left','leg-right','leg-left'],
+        'neck': ['neck','head','neck-back','head-back'],
+        'shoulder': ['shoulder-right','shoulder-left','arm-right','arm-left']
+      };
+      const related = map[currentArea] || [];
+      document.querySelectorAll('.body-part').forEach(part => {
+        const isActive = related.some(r => part.dataset.area.includes(r)) || part.dataset.area === currentArea;
+        part.classList.toggle('active', isActive);
+        if (isActive) {
+          part.style.fill = '#0F8F8F';
+          part.style.opacity = '0.7';
+          part.classList.remove('pulse');
+          void part.offsetWidth;
+          part.classList.add('pulse');
+        } else {
+          part.style.fill = '#E5E7EB';
+          part.style.opacity = '1';
+          part.classList.remove('pulse');
+        }
+      });
+    }
+    
+    // ===== تحديث بطاقة المعلومات =====
+    function updateInfo(areaId) {
+      const area = painAreas[areaId];
+      if (!area) return;
+      
+      document.querySelectorAll('.info-content-item').forEach(el => el.classList.add('exit'));
+      
+      setTimeout(() => {
+        infoContent.innerHTML = `
+          <div class="info-content-item visible">
+            <h3 class="text-2xl font-bold text-[#102A43] mb-2">${area.title}</h3>
+            <p class="text-gray-500 text-sm mb-4">${area.shortDescription}</p>
+            <p class="text-gray-600 leading-relaxed mb-5">${area.description}</p>
+            <div class="mb-5">
+              <h4 class="text-sm font-semibold text-[#102A43] mb-2">أبرز الحالات المرتبطة</h4>
+              <div class="flex flex-wrap gap-2">${area.conditions.map(c => `<span class="condition-tag">${c}</span>`).join('')}</div>
+            </div>
+            <div class="article-card" onclick="window.location.href='${area.article.link}'">
+              <div class="article-img"><img src="${area.article.image}" alt="${area.article.title}" loading="lazy" decoding="async"></div>
+              <div class="flex-1 min-w-0">
+                <span class="text-xs font-medium text-[#0F8F8F]">${area.article.category}</span>
+                <h5 class="text-sm font-semibold text-[#102A43] leading-tight hover:text-[#0F8F8F] transition-colors">${area.article.title}</h5>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 text-[#0F8F8F]"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <a href="${area.link}" class="inline-flex items-center gap-2 mt-5 bg-[#0F8F8F] hover:bg-[#0F8F8F]/90 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-[#0F8F8F]/25 hover:shadow-[#0F8F8F]/40 transition-all duration-300 hover:scale-105">
+              <span>اكتشف النصائح والعلاجات</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        `;
+        document.querySelectorAll('.quick-card').forEach(c => c.classList.toggle('active', c.dataset.area === areaId));
+        updateBodyActive();
+      }, 400);
+    }
+    
+    // ===== اختيار منطقة =====
+    function selectArea(areaId) {
+      if (isTransitioning || areaId === currentArea) return;
+      isTransitioning = true;
+      currentArea = areaId;
+      updateInfo(areaId);
+      setTimeout(() => { isTransitioning = false; }, 600);
+    }
+    
+    // ===== تبديل المنظر =====
+    function toggleView(view) {
+      if (view === currentView) return;
+      currentView = view;
+      
+      if (view === 'front') {
+        viewFrontBtn.className = 'px-6 py-2 rounded-full text-sm font-semibold bg-[#0F8F8F] text-white shadow-md shadow-[#0F8F8F]/20 transition-all duration-300 hover:scale-105';
+        viewBackBtn.className = 'px-6 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-500 hover:bg-gray-200 transition-all duration-300';
+      } else {
+        viewFrontBtn.className = 'px-6 py-2 rounded-full text-sm font-semibold bg-gray-100 text-gray-500 hover:bg-gray-200 transition-all duration-300';
+        viewBackBtn.className = 'px-6 py-2 rounded-full text-sm font-semibold bg-[#0F8F8F] text-white shadow-md shadow-[#0F8F8F]/20 transition-all duration-300 hover:scale-105';
+      }
+      
+      bodyContainer.style.opacity = '0';
+      bodyContainer.style.transform = 'scale(0.95)';
+      bodyContainer.style.transition = 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+      
+      setTimeout(() => {
+        buildBody();
+        bodyContainer.style.opacity = '1';
+        bodyContainer.style.transform = 'scale(1)';
+      }, 300);
+    }
+    
+    // ===== التهيئة =====
+    function init() {
+      buildQuickCards();
+      buildBody();
+      updateInfo('back');
+      
+      viewFrontBtn.addEventListener('click', () => toggleView('front'));
+      viewBackBtn.addEventListener('click', () => toggleView('back'));
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
     
   })();
 </script>
