@@ -828,7 +828,7 @@
       </div>
 
       <!-- Grid 3 Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
 
         <!-- ===== CARD 1 ===== -->
         <div
@@ -868,42 +868,6 @@
           <!-- Overlay أنيق عند Hover -->
           <div
             class="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-600/0 to-blue-700/0 group-hover:from-blue-600/5 group-hover:to-blue-700/10 transition-all duration-500 pointer-events-none">
-          </div>
-        </div>
-
-        <!-- ===== CARD 2 (Active افتراضيًا) ===== -->
-        <div
-          class="services-card-item group relative bg-[#1b7276] rounded-2xl p-8 h-[260px] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#1b7276]/30 cursor-default border border-blue-600/20">
-          <!-- الرقم (أعلى يمين) -->
-
-          <!-- العنوان -->
-          <h3 class="text-2xl font-bold text-white group-hover:text-white transition-all duration-500">خدمات دوائية</h3>
-
-          <!-- الخط الأفقي + الدائرة -->
-          <div
-            class="relative w-full h-[2px] bg-white/30 mt-4 mb-5 group-hover:bg-white/50 transition-all duration-500">
-            <span
-              class="absolute -top-[5px] right-0 w-3 h-3 rounded-full bg-white group-hover:bg-white transition-all duration-500"></span>
-          </div>
-
-          <!-- الوصف (أسفل يسار) -->
-          <p
-            class="text-sm leading-relaxed text-white/85 max-w-[85%] group-hover:text-white transition-all duration-500">
-            نوفر خدمات دوائية على مدار الساعة مع فريق صيدلي متخصص لضمان توفير الأدوية والمستلزمات الطبية بشكل فوري.
-          </p>
-
-          <!-- الأيقونة (أسفل يمين) -->
-          <div
-            class="absolute bottom-6 right-6 text-white/80 group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-            </svg>
-          </div>
-
-          <!-- تأثير توهج خفيف -->
-          <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl pointer-events-none">
           </div>
         </div>
 
@@ -951,7 +915,7 @@
   </section>
 
   <!-- ============================================ -->
-  <!-- SECTION NEW: موسوعة الـ 20 خدمة (سلايدر تفاعلي احترافي) -->
+  <!-- SECTION NEW: موسوعة الـ 22 خدمة (سلايدر تفاعلي احترافي) -->
   <!-- ============================================ -->
   <section class="w-full bg-white py-20 md:py-28 relative overflow-hidden border-t border-b border-gray-100"
     id="showcase20ServicesSection">
@@ -968,7 +932,7 @@
         <span
           class="inline-flex items-center gap-2 bg-[#1b7276]/10 text-[#1b7276] px-5 py-2 rounded-full font-bold text-xs md:text-sm mb-4 border border-[#1b7276]/20 shadow-sm">
           <i class="fa-solid fa-star text-amber-500"></i>
-          <span>موسوعة الخدمات العلاجية المكتملة (20 خدمة متخصصة)</span>
+          <span>موسوعة الخدمات العلاجية المكتملة (22 خدمة متخصصة)</span>
         </span>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#252932] tracking-tight leading-tight">
           استكشف جميع خدماتنا في العلاج الطبيعي والتأهيل
@@ -982,7 +946,7 @@
         <div class="flex items-center justify-center gap-2 md:gap-3 flex-wrap mt-8" id="serviceFilterTabs20">
           <button data-category="all"
             class="service-tab-btn-20 active px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all duration-300 bg-[#1b7276] text-white shadow-md shadow-[#1b7276]/20">
-            الكل (20)
+            الكل (22)
           </button>
           <button data-category="rehab"
             class="service-tab-btn-20 px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-[#1b7276]/10 hover:text-[#1b7276]">
@@ -1253,6 +1217,26 @@
           title: "تأهيل اللياقة البدنية والتمارين القلبية (Cardio)",
           desc: "برامج لياقة بدنية وتأهيل قلبي تنفسي لزيادة قوة التحمل وتنشيط الدورة الدموية والجهاز التنفسي.",
           tag: "نشاط وصحة"
+        },
+        {
+          id: 21,
+          category: "specialized",
+          categoryName: "علاج أطفال",
+          icon: "fa-child",
+          image: "serv/حالات الاطفال.jpeg",
+          title: "تأهيل حالات شلل الأطفال",
+          desc: "برامج علاجية وتأهيلية مكثفة لتحسين القدرة الحركية وتقوية عضلات الأطراف وزيادة الاعتماد على النفس للأطفال المصابين بشلل الأطفال.",
+          tag: "رعاية فائقة"
+        },
+        {
+          id: 22,
+          category: "specialized",
+          categoryName: "كبار السن",
+          icon: "fa-person-cane",
+          image: "hero-3.jpg",
+          title: "الرعاية والتأهيل الحركي لكبار السن",
+          desc: "برامج مخصصة للمسنين لتحسين التوازن والمرونة وتجنب السقوط، مع تعزيز القوة العضلية والقدرة على المشي باستقلالية وأمان.",
+          tag: "عناية متكاملة"
         }
       ];
 
@@ -1687,7 +1671,7 @@
         <div
           class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
           <div class="relative h-72 overflow-hidden bg-gray-100">
-            <img src="../img/team-1.jpeg" alt="د. محمد عبدالعاطي"
+            <img src="../img/team-1.jpeg" alt="pt. محمد عبدالعاطي"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
             </div>
@@ -1697,7 +1681,7 @@
             </span>
           </div>
           <div class="p-6 flex flex-col flex-1">
-            <h3 class="text-xl font-bold text-[#252932]">د. محمد عبدالعاطي</h3>
+            <h3 class="text-xl font-bold text-[#252932]">pt. محمد عبدالعاطي</h3>
             <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي إصابات الملاعب والتأهيل الرياضي</p>
             <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
               متخصص في علاج وتأهيل إصابات الملاعب والإصابات الرياضية، ويقدم برامج تأهيلية متكاملة تساعد الرياضيين على
@@ -1727,7 +1711,7 @@
                   <i class="fa-brands fa-facebook-f"></i>
                 </a>
               </div>
-              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20محمد%20عبدالعاطي"
+              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20pt.%20محمد%20عبدالعاطي"
                 target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
                 <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -1741,7 +1725,7 @@
         <div
           class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
           <div class="relative h-72 overflow-hidden bg-gray-100">
-            <img src="../img/team-2.jpeg" alt="د. فهد حسين شراحيلي"
+            <img src="../img/team-2.jpeg" alt="pt. فهد حسين شراحيلي"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
             </div>
@@ -1751,7 +1735,7 @@
             </span>
           </div>
           <div class="p-6 flex flex-col flex-1">
-            <h3 class="text-xl font-bold text-[#252932]">د. فهد حسين شراحيلي</h3>
+            <h3 class="text-xl font-bold text-[#252932]">pt. فهد حسين شراحيلي</h3>
             <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي علاج طبيعي</p>
             <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
               متخصص في تقييم وعلاج مشكلات الجهاز العضلي والحركي، ويقدم برامج علاج طبيعي وتأهيل مخصصة تساعد على تخفيف
@@ -1781,7 +1765,7 @@
                   <i class="fa-brands fa-facebook-f"></i>
                 </a>
               </div>
-              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20فهد%20حسين%20شراحيلي"
+              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20pt.%20فهد%20حسين%20شراحيلي"
                 target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
                 <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -1849,7 +1833,7 @@
         <div
           class="bg-white rounded-3xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col hover:-translate-y-2 hover:shadow-2xl hover:border-[#1b7276]/30 transition-all duration-300 group">
           <div class="relative h-72 overflow-hidden bg-gray-100">
-            <img src="../img/team-3.jfif" alt="د. سالم إبراهيم سمرة"
+            <img src="../img/team-3.jfif" alt="pt. سالم إبراهيم سمرة"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60">
             </div>
@@ -1859,7 +1843,7 @@
             </span>
           </div>
           <div class="p-6 flex flex-col flex-1">
-            <h3 class="text-xl font-bold text-[#252932]">د. سالم إبراهيم سمرة</h3>
+            <h3 class="text-xl font-bold text-[#252932]">pt. سالم إبراهيم سمرة</h3>
             <p class="text-[#1b7276] font-semibold text-sm mt-1">أخصائي علاج طبيعي وحجامة</p>
             <p class="text-gray-600 text-sm leading-relaxed mt-3 flex-1">
               متخصص في العلاج الطبيعي والحجامة، ويقدم برامج علاجية متكاملة تهدف إلى تخفيف آلام العضلات والمفاصل، وتحسين
@@ -1889,7 +1873,7 @@
                   <i class="fa-brands fa-facebook-f"></i>
                 </a>
               </div>
-              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20د.%20سالم%20إبراهيم%20سمرة"
+              <a href="https://wa.me/966545282472?text=أرغب%20في%20حجز%20موعد%20استشارة%20مع%20pt.%20سالم%20إبراهيم%20سمرة"
                 target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 bg-[#1b7276] text-white text-xs font-bold px-3 py-2 rounded-xl hover:bg-[#1b7276]/90 transition-all shadow-sm">
                 <i class="fa-brands fa-whatsapp text-sm"></i>
