@@ -2,6 +2,27 @@
 <html lang="ar" dir="rtl">
 
 <head>
+  <!-- Google tag (gtag.js) - Google Ads: AW-18368913248 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18368913248"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18368913248');
+
+    // Google Ads Conversion Tracking for WhatsApp & Phone Clicks
+    document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"], a[href*="api.whatsapp.com"], a[href^="tel:"]');
+        if (link) {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18368913248/FR3RCMSqoN4cEOC-_bZE'
+          });
+        }
+      });
+    });
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>اتصل بنا | تواصل مع مركز هنا التفاؤل للعلاج الطبيعي - بيشة</title>
@@ -928,6 +949,13 @@
           if (!emailRegex.test(email)) {
             statusDiv.innerHTML = '<span class="text-red-500">✕ الرجاء إدخال بريد إلكتروني صحيح</span>';
             return;
+          }
+
+          // إطلاق حدث التحويل لـ Google Ads بعد نجاح التحقق من المدخلات
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18368913248/FR3RCMSqoN4cEOC-_bZE'
+            });
           }
 
           // محاكاة الإرسال
