@@ -139,25 +139,68 @@
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-4 bg-white/95 backdrop-blur-xl shadow-md border-b border-gray-100">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="../index.html" class="flex items-center gap-3">
-        <img src="../../img/logo.png" alt="شعار هنا التفاؤل" class="w-12 h-12">
-        <span class="text-xl font-extrabold text-[#252932]">هنا التفاؤل</span>
-      </a>
-      <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-700">
-        <a href="../index.html" class="hover:text-[#1b7276] transition-colors">الرئيسية</a>
-        <a href="../services/" class="hover:text-[#1b7276] transition-colors">خدماتنا</a>
-        <a href="./" class="text-[#1b7276] font-extrabold">المدونة</a>
-        <a href="../contact/" class="hover:text-[#1b7276] transition-colors">اتصل بنا</a>
-      </div>
-      <a href="https://wa.me/966555766035?text=أرغب%20في%20الاستفسار%20عن%20التأهيل%20بعد%20الجلطات%20في%20بيشة" target="_blank"
-        class="bg-[#1b7276] text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-[#155a5d] transition-all">
-        حجز موعد الآن
-      </a>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-4 bg-white/95 backdrop-blur-xl shadow-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../../index.html" class="flex items-center gap-3">
+                <img src="../../img/logo.png" alt="شعار هنا التفاؤل" class="w-12 h-12">
+                <span class="text-xl font-extrabold text-[#252932]">هنا التفاؤل</span>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-700">
+                <a href="../../index.html" class="hover:text-[#1b7276] transition-colors">الرئيسية</a>
+                <a href="../../services/" class="hover:text-[#1b7276] transition-colors">خدماتنا</a>
+                <a href="../" class="text-[#1b7276] font-extrabold">المدونة</a>
+                <a href="../../contact/" class="hover:text-[#1b7276] transition-colors">اتصل بنا</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/966555766035?text=أرغب%20في%20الاستفسار%20عن%20التأهيل%20بعد%20الجلطات%20في%20بيشة" target="_blank"
+                class="hidden sm:inline-flex bg-[#1b7276] text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-[#155a5d] transition-all">
+                حجز موعد الآن
+                </a>
+                <button id="hamburgerBtn" class="md:hidden flex flex-col items-center justify-center w-11 h-11 rounded-2xl bg-teal-50 border border-teal-100 text-[#1b7276] hover:bg-[#1b7276] hover:text-white transition-all p-2 gap-1" aria-label="القائمة">
+                    <span class="w-6 h-0.5 bg-current rounded-full"></span>
+                    <span class="w-6 h-0.5 bg-current rounded-full"></span>
+                    <span class="w-6 h-0.5 bg-current rounded-full"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 left-0 w-full h-screen bg-white/98 backdrop-blur-2xl z-50 transform -translate-y-full transition-all duration-500 ease-in-out md:hidden flex flex-col justify-between p-8">
+        <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+            <div class="flex items-center gap-3">
+                <img src="../../img/logo.png" alt="شعار هنا التفاؤل" class="w-10 h-10">
+                <span class="text-xl font-extrabold text-[#252932]">هنا التفاؤل</span>
+            </div>
+            <button id="closeMobileMenu" class="w-11 h-11 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="flex flex-col items-center justify-center space-y-5 my-auto text-center">
+            <a href="../../index.html" class="block w-full py-3 text-xl font-bold text-gray-800 hover:text-[#1b7276]">الرئيسية</a>
+            <a href="../../about/" class="block w-full py-3 text-xl font-bold text-gray-800 hover:text-[#1b7276]">من نحن</a>
+            <a href="../../services/" class="block w-full py-3 text-xl font-bold text-gray-800 hover:text-[#1b7276]">خدماتنا</a>
+            <a href="../" class="block w-full py-3 text-xl font-extrabold text-[#1b7276]">المدونة</a>
+            <a href="../../contact/" class="block w-full py-3 text-xl font-bold text-gray-800 hover:text-[#1b7276]">اتصل بنا</a>
+        </div>
+        <div class="pt-4 border-t border-gray-100">
+            <a href="https://wa.me/966555766035" target="_blank" class="block w-full py-4 text-center rounded-2xl bg-[#1b7276] text-white font-bold text-lg shadow-lg">حجز موعد الآن</a>
+        </div>
     </div>
-  </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hBtn = document.getElementById('hamburgerBtn');
+            const mMenu = document.getElementById('mobileMenu');
+            const cBtn = document.getElementById('closeMobileMenu');
+            if (hBtn && mMenu) {
+                hBtn.addEventListener('click', () => mMenu.classList.toggle('open'));
+            }
+            if (cBtn && mMenu) {
+                cBtn.addEventListener('click', () => mMenu.classList.remove('open'));
+            }
+        });
+    </script>
 
   <!-- ARTICLE HEADER -->
   <header class="pt-32 pb-12 bg-gradient-to-b from-[#1b7276]/10 to-gray-50 border-b border-gray-200/60">
@@ -167,7 +210,7 @@
         <span>/</span>
         <span class="bg-[#1b7276]/10 px-3 py-1 rounded-full">التأهيل بعد الجلطات</span>
       </div>
-      <h1 class="text-3xl md:text-5xl font-black text-[#252932] leading-tight mb-6">
+      <h1 class="text-3xl md:text-5xl font-black text-[#252932] leading-relaxed md:leading-[1.5] mb-6">
         التأهيل الطبي بعد الجلطات الدماغية في بيشة | مركز هنا التفاؤل للعلاج الطبيعي
       </h1>
       <div class="flex flex-wrap items-center gap-6 text-sm text-gray-600 font-medium">
@@ -723,9 +766,11 @@
                         <h4 class="text-base font-bold text-[#252932] mb-4">خدماتنا</h4>
                         <nav aria-label="خدماتنا">
                             <ul class="space-y-2.5">
-                                <li><a href="./services/"
+                                <li><a href="../../services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج
                                     الطبيعي</a></li>
+                                <li><a href="../../services/"
+                                    class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خدمة الحجامة العلاجية</a></li>
                                 <li><a href="./services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">التأهيل
                                     بعد الإصابات</a></li>
@@ -757,8 +802,7 @@
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">واتساب
                                     0555766035</a></li>
                                 <li><a href="https://wa.me/966555343019" target="_blank" rel="noopener noreferrer"
-                                    class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">واتساب
-                                    0555343019</a></li>
+                                    class="text-[#1b7276] font-bold hover:underline transition-all duration-300 hover:translate-x-1 text-sm block">🩸 واتساب خدمات الحجامة (0555343019)</a></li>
                                 <li><a href="https://maps.app.goo.gl/m9bfrJV4Z4KXpiaw5" target="_blank" rel="noopener noreferrer"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خريطة
                                     الموقع</a></li>
@@ -769,7 +813,7 @@
             </div>
 
             <!-- ===== العمود 3: الصورة الزخرفية ===== -->
-            <div class="order-1 lg:order-3 flex justify-center lg:justify-end items-end">
+            <div class="hidden lg:flex order-1 lg:order-3 justify-center lg:justify-end items-end">
                 <div class="relative w-[160px] h-[280px] md:h-[340px] lg:h-[420px]">
                     <img src="../../img/vertebral-column.png" alt="">
                     <!-- Floating animation -->
@@ -907,12 +951,12 @@
         </a>
 
         <a href="https://wa.me/966555343019" target="_blank" rel="noopener noreferrer"
-          class="flex items-center justify-between p-2.5 rounded-2xl bg-teal-50/70 text-teal-800 hover:bg-[#1b7276] hover:text-white transition-all duration-300 font-bold text-xs shadow-sm hover:shadow-md group/item">
+          class="flex items-center justify-between p-2.5 rounded-2xl bg-rose-50/90 text-rose-900 border border-rose-200 hover:bg-rose-600 hover:text-white transition-all duration-300 font-bold text-xs shadow-sm hover:shadow-md group/item">
           <span class="flex items-center gap-2">
-              <i class="fa-brands fa-whatsapp text-lg text-[#1b7276] group-hover/item:text-white transition-colors"></i>
+              <i class="fa-brands fa-whatsapp text-lg text-rose-600 group-hover/item:text-white transition-colors"></i>
               <span>0555343019</span>
           </span>
-          <span class="text-[10px] bg-[#1b7276] text-white group-hover/item:bg-white group-hover/item:text-[#1b7276] px-2 py-0.5 rounded-lg transition-colors font-bold">واتساب / اتصال</span>
+          <span class="text-[10px] bg-rose-600 text-white group-hover/item:bg-white group-hover/item:text-rose-700 px-2 py-0.5 rounded-lg transition-colors font-extrabold shadow-sm">خاص بالحجامة 🩸</span>
         </a>
 
         <div class="pt-2.5 border-t border-gray-100 mt-1">
