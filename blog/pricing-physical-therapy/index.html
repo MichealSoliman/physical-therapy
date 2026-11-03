@@ -55,6 +55,9 @@
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -81,8 +84,104 @@
         "@type": "WebPage",
         "@id": "https://hona-altfaol.com/blog/pricing-physical-therapy/"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hona-altfaol.com/blog/pricing-physical-therapy/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://hona-altfaol.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المدونة",
+          "item": "https://hona-altfaol.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "أسعار جلسات العلاج الطبيعي والتأهيل في بيشة | هنا التفاؤل",
+          "item": "https://hona-altfaol.com/blog/pricing-physical-therapy/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://hona-altfaol.com/blog/pricing-physical-therapy/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "كم سعر جلسة العلاج الطبيعي في بيشة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "وفق قائمة الأسعار المرفقة لدى هنا التفاؤل: قبل الخصم 250 ريال – بعد الخصم 200 ريال."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم سعر باقة 6 جلسات علاج طبيعي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "قبل الخصم 1,200 ريال – بعد الخصم 1,050 ريال."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم سعر بكج 12 جلسة تأهيل جلطات؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "قبل الخصم 3,000 ريال – بعد الخصم 2,400 ريال."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم سعر باقة 12 جلسة للأطفال؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "قبل الخصم 3,000 ريال – بعد الخصم 1,800 ريال."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل الاستشارة في هنا التفاؤل مجانية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، توضح قائمة الأسعار المرفقة أن الاستشارة مجانية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل توجد باقات للعلاج الطبيعي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، تتضمن قائمة الأسعار باقة من 6 جلسات، بالإضافة إلى باقات التأهيل للكبار والأطفال."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل توجد خدمة تأهيل للأطفال؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، توجد باقة مخصصة للأطفال ضمن قائمة الأسعار."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكن حجز جلسة واحدة فقط؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "توجد جلسة علاجية فردية ضمن قائمة الأسعار، ويمكن التأكد من تفاصيل الحجز وتوفر المواعيد من خلال المركز."
+          }
+        }
+      ]
     }
-  </script>
+  ]
+}
+</script>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com">
@@ -971,7 +1070,7 @@
 
         <!-- Back to Blog Link -->
         <div class="text-center pt-4">
-          <a href="./" class="inline-flex items-center gap-2 text-[#1b7276] font-extrabold text-base hover:underline">
+          <a href="../" class="inline-flex items-center gap-2 text-[#1b7276] font-extrabold text-base hover:underline">
             <i class="fa-solid fa-arrow-right"></i>
             <span>العودة لجميع المقالات في المدونة</span>
           </a>
@@ -995,7 +1094,7 @@
             <div class="order-2 lg:order-1">
                 <!-- Logo -->
                 <div class="flex items-center gap-2 mb-4">
-                    <img src="../../img/logo.png" alt="">
+                    <img src="../../img/logo.png" alt="مركز هنا التفاؤل للعلاج الطبيعي والتأهيل الطبي ببيشة">
                 </div>
 
                 <!-- الوصف -->
@@ -1054,19 +1153,19 @@
                         <h4 class="text-base font-bold text-[#252932] mb-4">روابط سريعة</h4>
                         <nav aria-label="روابط سريعة">
                             <ul class="space-y-2.5">
-                                <li><a href="index.html"
+                                <li><a href="../../index.html"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">الرئيسية</a>
                                 </li>
-                                <li><a href="./about/"
+                                <li><a href="../../about/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">من
                                     نحن</a></li>
-                                <li><a href="./services/"
+                                <li><a href="../../services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خدماتنا</a>
                                 </li>
                                 <li><a href="#whyChooseUs"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">لماذا
                                     تختارنا</a></li>
-                                <li><a href="./contact/"
+                                <li><a href="../../contact/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">اتصل
                                     بنا</a></li>
                             </ul>
@@ -1083,16 +1182,16 @@
                                     الطبيعي</a></li>
                                 <li><a href="../../services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">خدمة الحجامة العلاجية</a></li>
-                                <li><a href="./services/"
+                                <li><a href="../../services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">التأهيل
                                     بعد الإصابات</a></li>
-                                <li><a href="./services/"
+                                <li><a href="../../services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">الإصابات
                                     الرياضية</a></li>
-                                <li><a href="./services/"
+                                <li><a href="../../services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج
                                     اليدوي</a></li>
-                                <li><a href="./services/"
+                                <li><a href="../../services/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">العلاج
                                     الطبيعي المنزلي</a></li>
                             </ul>
@@ -1104,10 +1203,10 @@
                         <h4 class="text-base font-bold text-[#252932] mb-4">الدعم والتواصل</h4>
                         <nav aria-label="الدعم والتواصل">
                             <ul class="space-y-2.5">
-                                <li><a href="./blog/"
+                                <li><a href="../"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">المدونة
                                     والمقالات</a></li>
-                                <li><a href="./contact/"
+                                <li><a href="../../contact/"
                                     class="text-gray-400 hover:text-[#1b7276] transition-all duration-300 hover:translate-x-1 text-sm block">تواصل
                                     معنا</a></li>
                                 <li><a href="https://wa.me/966555766035" target="_blank" rel="noopener noreferrer"
@@ -1126,7 +1225,7 @@
             <!-- ===== العمود 3: الصورة الزخرفية ===== -->
             <div class="hidden lg:flex order-1 lg:order-3 justify-center lg:justify-end items-end">
                 <div class="relative w-[160px] h-[280px] md:h-[340px] lg:h-[420px]">
-                    <img src="../../img/vertebral-column.png" alt="">
+                    <img src="../../img/vertebral-column.png" alt="العلاج الطبيعي والتأهيل الطبي ببيشة">
                     <!-- Floating animation -->
                     <style>
                         @keyframes floatShape {
