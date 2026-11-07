@@ -193,8 +193,26 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://hona-altfaol.com/amputation-rehabilitation/</loc>
+    <loc>https://hona-altfaol.com/blog/stroke-rehabilitation/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hona-altfaol.com/blog/amputation-rehabilitation/</loc>
     <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hona-altfaol.com/blog/pediatric-unbalanced-gait/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hona-altfaol.com/blog/muscle-joint-pain-after-exertion/</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
